@@ -1,0 +1,38 @@
+@import 'styles/base.scss';
+
+.activeRoute {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.appBarTitleCtn {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  .backButton {
+    width: 128px;
+    height: 64px;
+    background-color: rgba(0,0,0,0.2) !important;
+    position: absolute !important;
+    left: 0;
+    text-align: center;
+
+    .backIcon {
+      color: $white !important;
+      font-size: 24px !important;
+      padding-right: 10px;
+    }
+
+    .backButtonTitle {
+      font-size: 16px;
+      font-weight: bold;
+      vertical-align: middle;
+      color: $white;
+    }
+  }
+
+  .gwLogo {
+    margin-top: 20px;
+  }
+}

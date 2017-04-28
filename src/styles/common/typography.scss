@@ -1,0 +1,87 @@
+@import 'styles/_base.scss';
+
+html, body, div, span, object, iframe, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, h1,h2, h3, h4, h5, h6,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+}
+
+%headline{
+  font-size: 36px;
+  color: $tobacco-brown;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+%headline-large{
+  @extend %headline;
+  .large{
+    font-size: 48px
+  }
+}
+
+%header{
+  font-size: 18px;
+  line-height: 1;
+  color: $tobacco-brown;
+  text-transform: uppercase;
+}
+
+%title{
+  font-size: 16px;
+  line-height: 1.5;
+  color: $stonewall;
+}
+
+%body-text{
+  font-size: 16px;
+  line-height: 1.5;
+  color: $stonewall;
+}
+
+%body-text-small{
+  @extend %body-text;
+  font-size: 14px;
+  line-height: 1;
+}
+
+h1{
+  @extend %headline;
+}
+
+h2, h3, h4, h5, h6 {
+  @extend %header;
+}
+
+.headline-large{
+  @extend %headline-large;
+}
+
+.headline{
+  @extend %headline;
+}
+
+.header{
+  @extend %header;
+}
+
+.title{
+  @extend %title;
+}
+
+.body-text{
+  @extend %body-text;
+}
+
+.body-text-small{
+  @extend %body-text-small;
+}
