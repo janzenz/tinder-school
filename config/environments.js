@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 80
+
 // Here is where you can define configuration overrides based on the execution environment.
 // Supply a key to the default export matching the NODE_ENV that you wish to target, and
 // the base configuration will apply your overrides before exporting itself.
@@ -11,8 +13,8 @@ export default {
   development: (config) => ({
     server_host : 'localhost', // use string 'localhost' to prevent exposure on local network
     server_protocol : 'http',
-    server_port : process.env.PORT || 80,
-    compiler_public_path: `http://localhost:80/`,
+    server_port : PORT,
+    compiler_public_path: `http://localhost:${PORT}/`,
     proxy: {
       enabled: false,
       options: {
