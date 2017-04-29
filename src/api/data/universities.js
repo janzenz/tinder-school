@@ -19,7 +19,7 @@ const universities = [
     "nbOfAdmissions": 123,
     "tuitionFees": 42000,
     "tuitionFeesCurrency": "CHF",
-    "userMatchRate": null,
+    "userMatchRate": 30,
     "isFollowing": false,
     "location": {
       "locality": "Cambridge",
@@ -53,7 +53,7 @@ const universities = [
     "nbOfAdmissions": 148,
     "tuitionFees": 27000,
     "tuitionFeesCurrency": "USD",
-    "userMatchRate": null,
+    "userMatchRate": 43,
     "isFollowing": false,
     "location": {
       "locality": "Phoenix",
@@ -87,7 +87,7 @@ const universities = [
     "nbOfAdmissions": 2208,
     "tuitionFees": 35000,
     "tuitionFeesCurrency": "USD",
-    "userMatchRate": null,
+    "userMatchRate": 9,
     "isFollowing": false,
     "location": {
       "locality": "Stanford",
@@ -121,7 +121,7 @@ const universities = [
     "nbOfAdmissions": 1860,
     "tuitionFees": 27000,
     "tuitionFeesCurrency": "CHF",
-    "userMatchRate": null,
+    "userMatchRate": 78,
     "isFollowing": false,
     "location": {
       "locality": "Saint Andrews",
@@ -155,7 +155,7 @@ const universities = [
     "nbOfAdmissions": 3170,
     "tuitionFees": 19500,
     "tuitionFeesCurrency": "EUR",
-    "userMatchRate": null,
+    "userMatchRate": 62,
     "isFollowing": false,
     "location": {
       "locality": "Derby",
@@ -189,7 +189,7 @@ const universities = [
     "nbOfAdmissions": 0,
     "tuitionFees": 32000,
     "tuitionFeesCurrency": "EUR",
-    "userMatchRate": null,
+    "userMatchRate": 89,
     "isFollowing": false,
     "location": {
       "locality": "Newton",
@@ -223,7 +223,7 @@ const universities = [
     "nbOfAdmissions": 330,
     "tuitionFees": 5000,
     "tuitionFeesCurrency": "EUR",
-    "userMatchRate": null,
+    "userMatchRate": 95,
     "isFollowing": false,
     "location": {
       "locality": "San Francisco",
@@ -257,7 +257,7 @@ const universities = [
     "nbOfAdmissions": 3000,
     "tuitionFees": 41000,
     "tuitionFeesCurrency": "CHF",
-    "userMatchRate": null,
+    "userMatchRate": 55,
     "isFollowing": false,
     "location": {
       "locality": "Palaiseau",
@@ -291,7 +291,7 @@ const universities = [
     "nbOfAdmissions": 3000,
     "tuitionFees": 27000,
     "tuitionFeesCurrency": "EUR",
-    "userMatchRate": null,
+    "userMatchRate": 64,
     "isFollowing": false,
     "location": {
       "locality": "Jouy-en-Josas",
