@@ -4,6 +4,7 @@ import browserHistory from 'store/router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import {createStore} from './store/storeHandler';
 import AppContainer from './containers/AppContainer';
+import { thunks } from './store/actions';
 
 // ========================================================
 // Store and History Instantiation
@@ -73,4 +74,5 @@ if (__DEV__ && module.hot) {
 // ========================================================
 // Go!
 // ========================================================
+store.dispatch(thunks.fetchUniversities());
 render();
