@@ -1,50 +1,48 @@
-import React, { Component, PropTypes } from 'react'
-import MockApi from 'api';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
+import CircularProgress from 'material-ui/CircularProgress'
 
 class Universities extends Component {
   static propTypes = {
-
-  }
-
-  constructor() {
-    super();
-
-    this.state = {
-      universities: null
-    };
-  }
-
-  componentDidMount() {
-    MockApi.getUniversities().then(universities => this.setState({
-      universities: universities.data
-    }));
+    items: PropTypes.array,
+    isFetching: PropTypes.bool
   }
 
   render() {
-    const { universities } = this.state;
+    const { items, isFetching } = this.props;
 
     return (
-      <div>
-        <ul>
-          {universities && universities.map(university => {
-            return (<li key={university.id}>{university.displayName}</li>);
-          })}
-        </ul>
+      isFetching ? (
+        <CircularProgress color="#CD7254" />
+      ) : (
         <div>
-          <FloatingActionButton backgroundColor="#CD7254" zDepth={0}>
-            <CloseIcon />
-          </FloatingActionButton>
-          <FloatingActionButton backgroundColor="#6C5A6F" zDepth={0}>
-            <CheckIcon />
-          </FloatingActionButton>
+          <ul>
+            {items && items.map(university => {
+              return (<li key={university.id}>{university.displayName}</li>);
+            })}
+          </ul>
+          <div>
+            <FloatingActionButton backgroundColor="#CD7254" zDepth={0}>
+              <CloseIcon />
+            </FloatingActionButton>
+            <FloatingActionButton backgroundColor="#6C5A6F" zDepth={0}>
+              <CheckIcon />
+            </FloatingActionButton>
+          </div>
         </div>
-      </div>
+      )
     );
   }
 }
 
-export default Universities;
+const mapStateToProps = (state) => {
+  return {
+    ...state.universities
+  };
+};
+
+export default connect(mapStateToProps)(Universities);

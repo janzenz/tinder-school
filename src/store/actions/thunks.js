@@ -7,7 +7,7 @@ export const fetchUniversities = () => {
 
     return MockApi.getUniversities()
       .then(universities => {
-        dispatch(creators.receiveUniversities(universities));
+        dispatch(creators.receiveUniversities(universities.data));
       })
       .catch(error => {
         throw error;

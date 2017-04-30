@@ -1,13 +1,8 @@
 import { types } from '../actions';
 import { combineReducers } from 'redux';
 
-export default combineReducers({
-  isFetching,
-  items
-});
-
 const items = (state = [], action) => {
-  switch(action.types) {
+  switch(action.type) {
     case types.RECEIVE_UNIVERSITIES:
       return action.universities;
     default:
@@ -25,3 +20,8 @@ const isFetching = (state = false, action) => {
       return state;
   }
 };
+
+export default combineReducers({
+  isFetching,
+  items
+});
