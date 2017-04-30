@@ -8,7 +8,7 @@ universities: {
   isFetching: false,
   items: [],
   selected: [],
-  deselected: []
+  rejected: []
 }
 */
 

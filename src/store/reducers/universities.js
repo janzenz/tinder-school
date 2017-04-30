@@ -21,6 +21,15 @@ const selected = (state = [], action) => {
   }
 };
 
+const rejected = (state = [], action) => {
+  switch(action.type) {
+    case types.REJECT_UNIVERSITY:
+      return state.concat(action.university);
+    default:
+      return state;
+  }
+};
+
 const isFetching = (state = false, action) => {
   switch(action.type) {
     case types.RECEIVE_UNIVERSITIES:
@@ -35,5 +44,6 @@ const isFetching = (state = false, action) => {
 export default combineReducers({
   isFetching,
   items,
-  selected
+  selected,
+  rejected
 });

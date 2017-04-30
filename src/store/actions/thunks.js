@@ -22,7 +22,7 @@ export const chooseUniversity = (choose) => {
     if (choose) {
       dispatch(creators.pickUniversity(university[0]));
     } else {
-      // dispatch(creators.pickUniversity(university));
+      dispatch(creators.rejectUniversity(university));
     }
 
     dispatch(creators.popUniversity());

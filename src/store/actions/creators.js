@@ -13,7 +13,13 @@ export const popUniversity = () => ({
   type: types.POP_UNIVERSITY
 });
 
+// TODO: improve naming for `pick` and `reject`
 export const pickUniversity = (university) => ({
   type: types.PICK_UNIVERSITY,
+  university
+});
+
+export const rejectUniversity = (university) => ({
+  type: types.REJECT_UNIVERSITY,
   university
 });
