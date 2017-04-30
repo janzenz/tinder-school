@@ -1,15 +1,18 @@
 .choicesContainer {
+
   .choicesBody {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 450px;
+    position: relative;
   }
 
   .choicesFooter {
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
-    width: 80%;
+    width: 30%;
   }
 }

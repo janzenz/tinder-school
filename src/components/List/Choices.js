@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import ChoicesCard from './ChoicesCard';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
+import InfoIcon from 'material-ui/svg-icons/action/info-outline';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import classes from './Choices.scss';
@@ -24,6 +25,11 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
         onTouchTap={rejectUniversity}
       >
         <CloseIcon />
+      </FloatingActionButton>
+      <FloatingActionButton
+        zDepth={0}
+      >
+        <InfoIcon />
       </FloatingActionButton>
       <FloatingActionButton
         backgroundColor="#6C5A6F"

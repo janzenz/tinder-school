@@ -7,7 +7,29 @@
   background-color: #fff;
   width: 500px;
   padding-bottom: 20px;
-  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.65);
+  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.15);
+
+  // Card-mimic Specific styles
+  z-index: 0;
+  position: absolute;
+  transition: all .75s;
+
+  &:first-of-type {
+    top: 10px;
+    z-index: 3;
+  }
+
+  &:nth-child(n + 2) {
+    top: 15px;
+    z-index: 2;
+    width: 475px;
+  }
+
+  &:nth-child(n + 3) {
+    top: 20px;
+    z-index: 1;
+    width: 450px;
+  }
 
   .choicesCardHeader {
     display: flex;
