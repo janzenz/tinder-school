@@ -10,7 +10,7 @@ export class IndexLayout extends React.Component {
 
   render() {
     return (
-      <DefaultLayout Header={InnerHeader}>
+      <DefaultLayout Header={<InnerHeader />}>
         <InnerPage
           titleText={'Inner Page'}
           backgroundClass={'defaultBackground'}
