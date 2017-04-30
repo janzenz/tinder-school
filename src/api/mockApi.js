@@ -18,6 +18,14 @@ class Api {
       }, delay);
     });
   }
+
+  static getUniversities() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Object.assign({}, {data: db.universities}));
+      }, delay);
+    });
+  }
 }
 
 export default Api;
