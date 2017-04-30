@@ -54,12 +54,21 @@ time, mark, audio, video {
   line-height: 1;
 }
 
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
 h1{
   @extend %headline;
 }
 
 h2, h3, h4, h5, h6 {
   @extend %header;
+}
+
+p {
+  @extend %body-text;
 }
 
 .headline-large{

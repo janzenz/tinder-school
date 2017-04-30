@@ -1,16 +1,23 @@
 import React, { PropTypes } from 'react';
+import ChoicesCard from './ChoicesCard';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
+import CircularProgress from 'material-ui/CircularProgress';
+import classes from './Choices.scss';
 
-const Choices = ({ choices, chooseUniversity, rejectUniversity }) => (
-  <div>
-    <ul>
-      {choices && choices.map(university => {
-        return (<li key={university.id}>{university.displayName}</li>);
-      })}
-    </ul>
-    <div>
+const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) => (
+  <div className={classes.choicesContainer}>
+    <div className={classes.choicesBody}>
+      {isFetching ? (
+        <CircularProgress size={60} thickness={5} color="#CD7254" />
+      ) : (
+        choices.map(university => {
+          return <ChoicesCard key={university.id} university={university} />;
+        })
+      )}
+    </div>
+    <div className={classes.choicesFooter}>
       <FloatingActionButton
         backgroundColor="#CD7254"
         zDepth={0}
@@ -30,9 +37,10 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity }) => (
 );
 
 Choices.propTypes = {
-  choices: PropTypes.array,
-  chooseUniversity: PropTypes.func,
-  rejectUniversity: PropTypes.func
+  choices: PropTypes.array.isRequired,
+  chooseUniversity: PropTypes.func.isRequired,
+  rejectUniversity: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired
 };
 
 export default Choices;

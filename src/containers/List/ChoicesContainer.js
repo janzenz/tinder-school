@@ -19,11 +19,12 @@ class ChoicesContainer extends Component {
   }
 
   render() {
-    const { choices } = this.props;
+    const { choices, isFetching } = this.props;
 
     return (
       <Choices
         choices={choices}
+        isFetching={isFetching}
         chooseUniversity={this.chooseUniversity}
         rejectUniversity={this.rejectUniversity}
       />
