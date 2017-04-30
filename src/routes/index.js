@@ -1,6 +1,6 @@
 import CoreLayoutContainer from 'containers/CoreLayout';
 import HomeRoute from './Home';
-import MyUniversitiesRoute from './MyUniversities';
+import MyUniversitiesRoute, { UniversityRoute } from './MyUniversities';
 
 // TODO: Async loading for the Child Routes
 export const createRoutes = (store) => ({
@@ -8,7 +8,7 @@ export const createRoutes = (store) => ({
   component: CoreLayoutContainer,
   indexRoute: HomeRoute(store),
   getChildRoutes(location, cb) {
-    cb(null, [ MyUniversitiesRoute(store) ]);
+    cb(null, [ MyUniversitiesRoute(store), UniversityRoute(store) ]);
   }
 });
 

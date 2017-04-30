@@ -1,15 +1,21 @@
 import React, { PropTypes } from 'react';
+import SelectedItem from './SelectedItem';
 
 const Selected = ({ selected }) => (
-  <ul>
+  <div>
     {selected && selected.map(university => {
-      return (<li key={university.id}>{university.displayName}</li>);
+      return (
+        <SelectedItem
+          key={university.id}
+          university={university}
+        />
+      );
     })}
-  </ul>
+  </div>
 );
 
 Selected.propTypes = {
   selected: PropTypes.array
-}
+};
 
 export default Selected;
