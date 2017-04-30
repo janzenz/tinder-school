@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
 const Selected = ({ selected }) => (
   <ul>
@@ -7,5 +7,9 @@ const Selected = ({ selected }) => (
     })}
   </ul>
 );
+
+Selected.propTypes = {
+  selected: PropTypes.array
+}
 
 export default Selected;

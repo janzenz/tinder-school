@@ -13,7 +13,7 @@ export const WelcomePage = ({titleText, backgroundClass, children}) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default WelcomePage;

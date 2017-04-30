@@ -50,7 +50,7 @@ export default class InnerHeader extends React.Component {
       >
         <ArrowLeftIcon />
       </IconButton>
-    )
+    );
   }
 
   renderAppBarTitle() {

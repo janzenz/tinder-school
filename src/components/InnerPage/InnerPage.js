@@ -13,7 +13,7 @@ export const InnerPage = ({titleText, backgroundClass, children}) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default InnerPage;
