@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DefaultHeader from 'containers/DefaultHeader';
+import DefaultHeader from 'containers/Header';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 
 export class DefaultLayout extends React.Component {

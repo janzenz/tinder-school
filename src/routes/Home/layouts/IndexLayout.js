@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
 import WelcomePage from 'components/WelcomePage/WelcomePage';
 
@@ -26,6 +27,7 @@ export class IndexLayout extends React.Component {
               team for approval before doing so.
             </li>
           </ol>
+          <Link to="/my-universities">My Universities</Link>
         </WelcomePage>
       </DefaultLayout>
     );

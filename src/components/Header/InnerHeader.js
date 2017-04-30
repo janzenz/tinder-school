@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import GwLogo from 'assets/gw-logo.svg';
-import classes from './Header.scss';
+import classes from './InnerHeader.scss';
 
 let titleElementStyle = {
   display: 'flex',
@@ -9,7 +9,7 @@ let titleElementStyle = {
   overflow: 'visible'
 };
 
-export default class Header extends React.Component {
+export default class InnerHeader extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -39,6 +39,6 @@ export default class Header extends React.Component {
   }
 }
 
-Header.propTypes = {
+InnerHeader.propTypes = {
 
 };
