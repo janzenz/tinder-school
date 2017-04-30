@@ -6,7 +6,7 @@ import universities from './universities';
 /*
 universities: {
   isFetching: false,
-  items: [],
+  choices: [],
   selected: [],
   rejected: []
 }

@@ -17,7 +17,7 @@ export const fetchUniversities = () => {
 
 export const chooseUniversity = (choose) => {
   return (dispatch, getState) => {
-    const university = getState().universities.items.slice(0,1);
+    const university = getState().universities.choices.slice(0,1);
 
     if (choose) {
       dispatch(creators.pickUniversity(university[0]));

@@ -2,7 +2,7 @@ import React from 'react';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
 import InnerPage from 'components/InnerPage/InnerPage';
 import { InnerHeader } from 'containers/Header';
-import Universities from 'containers/Universities';
+import { Choices, Selected } from 'containers/List';
 
 export class IndexLayout extends React.Component {
   constructor(props, context) {
@@ -15,7 +15,8 @@ export class IndexLayout extends React.Component {
         <InnerPage
           backgroundClass={'defaultBackground'}
         >
-          <Universities />
+          <Choices />
+          <Selected />
         </InnerPage>
       </DefaultLayout>
     );
