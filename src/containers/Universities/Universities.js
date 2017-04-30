@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { chooseUniversity } from 'store/actions/thunks';
 
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
@@ -9,7 +10,16 @@ import CircularProgress from 'material-ui/CircularProgress'
 class Universities extends Component {
   static propTypes = {
     items: PropTypes.array,
-    isFetching: PropTypes.bool
+    isFetching: PropTypes.bool,
+    chooseUniversity: PropTypes.func
+  }
+
+  chooseUniversity = () => {
+    this.props.chooseUniversity(true);
+  }
+
+  rejectUniversity = () => {
+    this.props.chooseUniversity(false);
   }
 
   render() {
@@ -26,10 +36,18 @@ class Universities extends Component {
             })}
           </ul>
           <div>
-            <FloatingActionButton backgroundColor="#CD7254" zDepth={0}>
+            <FloatingActionButton
+              backgroundColor="#CD7254"
+              zDepth={0}
+              onTouchTap={this.rejectUniversity}
+            >
               <CloseIcon />
             </FloatingActionButton>
-            <FloatingActionButton backgroundColor="#6C5A6F" zDepth={0}>
+            <FloatingActionButton
+              backgroundColor="#6C5A6F"
+              zDepth={0}
+              onTouchTap={this.chooseUniversity}
+            >
               <CheckIcon />
             </FloatingActionButton>
           </div>
@@ -45,4 +63,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Universities);
+const mapActionCreators = {
+  chooseUniversity
+};
+
+export default connect(mapStateToProps, mapActionCreators)(Universities);
