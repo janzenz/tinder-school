@@ -41,9 +41,19 @@ const isFetching = (state = false, action) => {
   }
 };
 
+const active = (state = null, action) => {
+  switch(action.type) {
+    case types.VIEW_UNIVERSITY:
+      return action.universityId;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   isFetching,
   choices,
   selected,
-  rejected
+  rejected,
+  active
 });

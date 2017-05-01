@@ -1,21 +1,13 @@
 import React, { PropTypes } from 'react';
-import SelectedItem from './SelectedItem';
 
-const Selected = ({ selected }) => (
+const Selected = ({ children }) => (
   <div>
-    {selected && selected.map(university => {
-      return (
-        <SelectedItem
-          key={university.id}
-          university={university}
-        />
-      );
-    })}
+    {children}
   </div>
 );
 
 Selected.propTypes = {
-  selected: PropTypes.array
+  children: PropTypes.node
 };
 
 export default Selected;

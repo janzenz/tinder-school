@@ -8,7 +8,8 @@ universities: {
   isFetching: false,
   choices: [],
   selected: [],
-  rejected: []
+  rejected: [],
+  active: null
 }
 */
 

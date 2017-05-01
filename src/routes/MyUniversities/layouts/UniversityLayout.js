@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
 import InnerPage from 'components/InnerPage/InnerPage';
 import { InnerHeader } from 'containers/Header';
+import { universitySelector } from 'store/selectors/university';
 
-export class IndexLayout extends React.Component {
+export class IndexLayout extends Component {
+  static propTypes = {
+    university: PropTypes.object.isRequired
+  }
+
   constructor(props, context) {
     super(props, context);
   }
 
   render() {
+    const { university } = this.props;
+
     return (
       <DefaultLayout Header={<InnerHeader />}>
         <InnerPage
           backgroundClass={'defaultBackground'}
         >
-          Hello World
+          {university.displayName}
         </InnerPage>
       </DefaultLayout>
     );
@@ -24,4 +32,8 @@ export class IndexLayout extends React.Component {
 IndexLayout.propTypes = {
 };
 
-export default IndexLayout;
+const mapStateToProps = (state) => ({
+  university: universitySelector(state)
+});
+
+export default connect(mapStateToProps)(IndexLayout);

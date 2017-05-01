@@ -23,3 +23,8 @@ export const rejectUniversity = (university) => ({
   type: types.REJECT_UNIVERSITY,
   university
 });
+
+export const viewUniversity = (universityId) => ({
+  type: types.VIEW_UNIVERSITY,
+  universityId
+});
