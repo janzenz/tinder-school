@@ -53,7 +53,7 @@
     "koa-proxy": "^0.6.0",
     "koa-sslify": "^1.0.1",
     "koa-static": "^2.0.0",
-    "material-ui": "^0.16.3",
+    "material-ui": "^0.17.4",
     "moment": "^2.13.0",
     "node-sass": "^3.7.0",
     "normalize.css": "^4.1.1",
