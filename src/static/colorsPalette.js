@@ -7,6 +7,7 @@ export const colors = {
   patina: '#6FA89D',
   shipCove: '#647ABD',
   oldLavender: '#694766',
+  japonica: '#CD5F54',
 
 // Neutral Palette
   tobaccoBrown: '#695745',

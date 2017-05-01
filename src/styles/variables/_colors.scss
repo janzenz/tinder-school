@@ -11,6 +11,7 @@ $mantis: #7CBD5C;
 $patina: #6FA89D;
 $ship-cove: #647ABD;
 $old-lavender: #694766;
+$japonica: #CD5F54;
 
 // Neutral Palette
 $tobacco-brown: #695745;
@@ -47,4 +48,5 @@ $bronze: #B76623;
 
 //Unknown
 $inkBar: #F4CBC7;
-$cascade: #89AAA7;
+// TODO: Remove this alias and change it directly from the selectors that use it.
+$cascade: $acapulco;

@@ -55,6 +55,7 @@ export default {
   },
 
   'palette': {
-    'primary1Color': colors.oldLavender
+    'primary1Color': colors.oldLavender,
+    'accent1Color': colors.japonica
   }
 };

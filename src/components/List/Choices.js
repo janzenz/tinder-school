@@ -11,7 +11,7 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
   isFetching ? (
     <div className={classes.choicesContainer}>
       <div className={classes.choicesBody}>
-        <CircularProgress size={60} thickness={5} color="#CD7254" />
+        <CircularProgress size={60} thickness={5} />
       </div>
     </div>
   ) : (
@@ -23,7 +23,7 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
       </div>
       <div className={classes.choicesFooter}>
         <FloatingActionButton
-          backgroundColor="#CD7254"
+          secondary
           zDepth={0}
           onTouchTap={rejectUniversity}
         >
@@ -36,7 +36,6 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
           <InfoIcon />
         </FloatingActionButton>
         <FloatingActionButton
-          backgroundColor="#6C5A6F"
           zDepth={0}
           onTouchTap={chooseUniversity}
         >

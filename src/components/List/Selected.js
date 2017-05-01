@@ -32,8 +32,8 @@ const Selected = ({ selected, total, seeAll, onClick, onToggleView }) => (
     {total > 3 && (
       <div className={classes.selectedFooter}>
         <FlatButton
+          fullWidth
           onClick={onToggleView}
-          className={classes.actionButton}
           label={seeAll ? 'Collapse' : 'See All'}
         />
       </div>
