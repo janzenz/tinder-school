@@ -1,24 +1,14 @@
 import React, { PropTypes } from 'react';
 import { kFormatter, getPercentage, getMatchRange } from 'modules/helpers';
-import classes from './ChoicesCard.scss';
+// TODO: Is this necessary?
 import _capitalize from 'lodash/capitalize';
+import { UniversityHeader } from 'components/Header';
+import classes from './ChoicesCard.scss';
 
 const ChoicesCard = ({ university }) => (
   <div className={classes.choicesCardContainer}>
-    <div
-      className={classes.choicesCardHeader}
-      style={{
-        backgroundImage: `url(http://placehold.it/350x150)`,
-        backgroundSize: 'cover'
-      }}
-    >
-      <div
-        className={classes.logo}
-        style={{
-          backgroundImage: `url(http://placehold.it/150x150)`,
-          backgroundSize: 'cover'
-        }}
-      />
+    <div className={classes.choicesCardHeader}>
+      <UniversityHeader />
     </div>
     <div className={classes.choicesCardBody}>
       <h2>{_capitalize(university.displayName)}</h2>

@@ -1,0 +1,14 @@
+.universityHeader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100px;
+  width: 100%;
+
+  .logo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: -40px;
+  }
+}

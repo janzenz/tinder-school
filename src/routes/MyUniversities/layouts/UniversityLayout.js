@@ -20,7 +20,6 @@ export class IndexLayout extends Component {
     return (
       <DefaultLayout Header={<InnerHeader />}>
         <InnerPage>
-          {university.displayName}
         </InnerPage>
       </DefaultLayout>
     );
