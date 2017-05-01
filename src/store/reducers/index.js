@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { routerReducer as router } from 'react-router-redux';
+import { routerReducer as routing } from 'react-router-redux';
 import universities from './universities';
 
 /* Overview of the State Shape */
@@ -17,7 +17,7 @@ export const makeRootReducer = (asyncReducers) => {
     // Add sync reducers here
     universities,
     // Default reducers
-    router,
+    routing,
     ...asyncReducers
   });
 };

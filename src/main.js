@@ -5,6 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import {createStore} from './store/storeHandler';
 import AppContainer from './containers/AppContainer';
 import { thunks } from './store/actions';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 // ========================================================
 // Store and History Instantiation
@@ -15,7 +16,7 @@ import { thunks } from './store/actions';
 // react-router-redux of its location.
 const initialState = window.___INITIAL_STATE__;
 const store = createStore(initialState, browserHistory);
-const history = browserHistory;
+const history = syncHistoryWithStore(browserHistory, store);
 
 // ========================================================
 // Developer Tools Setup
