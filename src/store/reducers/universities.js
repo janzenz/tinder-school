@@ -50,10 +50,20 @@ const active = (state = null, action) => {
   }
 };
 
+const seeAll = (state = false, action) => {
+  switch(action.type) {
+    case types.TOGGLE_SEE_ALL:
+      return action.toggle;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   isFetching,
   choices,
   selected,
   rejected,
-  active
+  active,
+  seeAll
 });

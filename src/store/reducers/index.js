@@ -9,7 +9,8 @@ universities: {
   choices: [],
   selected: [],
   rejected: [],
-  active: null
+  active: null,
+  seeAll: false
 }
 */
 

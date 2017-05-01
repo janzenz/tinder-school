@@ -20,7 +20,7 @@ export default {
     'iconColor': colors.white
   },
 
-  'fontFamily': 'karla-regular',
+  'fontFamily': 'Helvetica Neue, Helvetica, Arial, sans-serif',
 
   'drawer': {
     'width': 400,
@@ -28,9 +28,18 @@ export default {
   },
 
   'raisedButton': {
-    'fontSize': '16px',
+    'fontSize': '18px',
     'fontWeight': 'bold',
     'textColor': colors.oldLavender,
+    'primaryTextColor': colors.white,
+    'secondaryColor': colors.swirl,
+    'secondaryTextColor': colors.white
+  },
+
+  'flatButton': {
+    'fontSize': '18px',
+    'fontWeight': 'bold',
+    'textColor': colors.acapulco,
     'primaryTextColor': colors.white,
     'secondaryColor': colors.swirl,
     'secondaryTextColor': colors.white

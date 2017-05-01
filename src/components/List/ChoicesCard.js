@@ -29,7 +29,7 @@ const ChoicesCard = ({ university }) => (
           <h3>Students</h3>
         </div>
         <div className={classes.infoCol}>
-          <h2>{getPercentage(university.nbOfAdmissions, university.nbOfApplicants) || 'NA'}</h2>
+          <h2>{getPercentage(university.nbOfAdmissions, university.nbOfApplicants) || 'N/A'}</h2>
           <h3>Acceptance</h3>
         </div>
         <div className={classes.infoCol}>

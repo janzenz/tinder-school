@@ -28,3 +28,8 @@ export const viewUniversity = (universityId) => ({
   type: types.VIEW_UNIVERSITY,
   universityId
 });
+
+export const toggleSeeAll = (toggle) => ({
+  type: types.TOGGLE_SEE_ALL,
+  toggle
+});
