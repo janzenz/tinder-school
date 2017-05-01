@@ -1,5 +1,18 @@
+import _inRange from 'lodash/inRange';
+
 export const kFormatter = (value) => {
-  return value > 999 ? (value/1000).toFixed(1) + 'k' : value;
+  if (value < 1000) {
+    return value;
+  }
+
+  const result = value / 1000;
+
+  // Check for remainder
+  if (result % 1 === 0) {
+    return `${result}k`;
+  } else {
+    return `${result.toFixed(1)}k`;
+  }
 };
 
 export const getPercentage = (numerator, denominator) => {
@@ -11,13 +24,13 @@ export const getPercentage = (numerator, denominator) => {
 };
 
 export const getMatchRange = (rate) => {
-  if (0 <= rate && rate <= 25) {
+  if (_inRange(rate, 0, 25)) {
     return 0;
-  } else if (25 < rate && rate <= 50) {
+  } else if (_inRange(rate, 26, 50)) {
     return 25;
-  } else if (50 < rate && rate <= 75) {
+  } else if (_inRange(rate, 51, 75)) {
     return 50;
-  } if (75 < rate && rate <= 100) {
+  } if (_inRange(rate, 76, 100)) {
     return 75;
   }
 }
