@@ -1,4 +1,8 @@
+@import "styles/variables/colors";
+
 .choicesContainer {
+  background-color: $cascade;
+  padding: 25px 0;
 
   .choicesBody {
     display: flex;
@@ -12,7 +16,7 @@
   .choicesFooter {
     display: flex;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 30%;
   }
 }

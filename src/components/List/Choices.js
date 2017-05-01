@@ -30,6 +30,7 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
           <CloseIcon />
         </FloatingActionButton>
         <FloatingActionButton
+          backgroundColor="transparent"
           zDepth={0}
         >
           <InfoIcon />
