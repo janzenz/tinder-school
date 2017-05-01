@@ -8,38 +8,42 @@ import CircularProgress from 'material-ui/CircularProgress';
 import classes from './Choices.scss';
 
 const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) => (
-  <div className={classes.choicesContainer}>
-    <div className={classes.choicesBody}>
-      {isFetching ? (
+  isFetching ? (
+    <div className={classes.choicesContainer}>
+      <div className={classes.choicesBody}>
         <CircularProgress size={60} thickness={5} color="#CD7254" />
-      ) : (
-        choices.map(university => {
-          return <ChoicesCard key={university.id} university={university} />;
-        })
-      )}
+      </div>
     </div>
-    <div className={classes.choicesFooter}>
-      <FloatingActionButton
-        backgroundColor="#CD7254"
-        zDepth={0}
-        onTouchTap={rejectUniversity}
-      >
-        <CloseIcon />
-      </FloatingActionButton>
-      <FloatingActionButton
-        zDepth={0}
-      >
-        <InfoIcon />
-      </FloatingActionButton>
-      <FloatingActionButton
-        backgroundColor="#6C5A6F"
-        zDepth={0}
-        onTouchTap={chooseUniversity}
-      >
-        <CheckIcon />
-      </FloatingActionButton>
+  ) : (
+    <div className={classes.choicesContainer}>
+      <div className={classes.choicesBody}>
+        {choices.map(university => (
+          <ChoicesCard key={university.id} university={university} />
+        ))}
+      </div>
+      <div className={classes.choicesFooter}>
+        <FloatingActionButton
+          backgroundColor="#CD7254"
+          zDepth={0}
+          onTouchTap={rejectUniversity}
+        >
+          <CloseIcon />
+        </FloatingActionButton>
+        <FloatingActionButton
+          zDepth={0}
+        >
+          <InfoIcon />
+        </FloatingActionButton>
+        <FloatingActionButton
+          backgroundColor="#6C5A6F"
+          zDepth={0}
+          onTouchTap={chooseUniversity}
+        >
+          <CheckIcon />
+        </FloatingActionButton>
+      </div>
     </div>
-  </div>
+  )
 );
 
 Choices.propTypes = {
