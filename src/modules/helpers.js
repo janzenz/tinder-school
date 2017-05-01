@@ -17,10 +17,17 @@ export const kFormatter = (value) => {
 
 export const getPercentage = (numerator, denominator) => {
   if (denominator === 0) {
-    return false;
+    return 0;
   }
 
-  return Math.round((numerator / denominator) * 100) + '%';
+  return Math.round((numerator / denominator) * 100);
+};
+
+export const getPercentageString = (numerator, denominator) => {
+  const result = getPercentage(numerator, denominator);
+  return result > 0 ?
+    `${result}%` :
+    'N/A';
 };
 
 export const getMatchRange = (rate) => {
