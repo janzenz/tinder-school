@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { kFormatter, getPercentage, getMatchRange } from 'modules/helpers';
 import classes from './ChoicesCard.scss';
+import _capitalize from 'lodash/capitalize';
 
 const ChoicesCard = ({ university }) => (
   <div className={classes.choicesCardContainer}>
@@ -20,7 +21,7 @@ const ChoicesCard = ({ university }) => (
       />
     </div>
     <div className={classes.choicesCardBody}>
-      <h2>{university.displayName.toLowerCase()}</h2>
+      <h2>{_capitalize(university.displayName)}</h2>
       <h3>{`${university.location.locality}, ${university.location.country}`}</h3>
       <div className={classes.universityDetails}>
         <div className={classes.infoCol}>

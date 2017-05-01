@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
-import InnerPage from 'components/InnerPage/InnerPage';
+import InnerPage from 'components/InnerPage';
 import { InnerHeader } from 'containers/Header';
 import { universitySelector } from 'store/selectors/university';
 
@@ -19,9 +19,7 @@ export class IndexLayout extends Component {
 
     return (
       <DefaultLayout Header={<InnerHeader />}>
-        <InnerPage
-          backgroundClass={'defaultBackground'}
-        >
+        <InnerPage>
           {university.displayName}
         </InnerPage>
       </DefaultLayout>

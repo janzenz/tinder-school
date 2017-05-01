@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Selected } from 'components/List';
-import SelectedItem from './SelectedItemContainer';
 import { viewUniversity } from 'store/actions/creators';
 
 class SelectedContainer extends Component {
@@ -18,17 +17,7 @@ class SelectedContainer extends Component {
     const { selected } = this.props;
 
     return (
-      <Selected>
-        {selected && selected.map(university => {
-          return (
-            <SelectedItem
-              key={university.id}
-              university={university}
-              onClick={this.onClick}
-            />
-          );
-        })}
-      </Selected>
+      <Selected selected={selected} onClick={this.onClick} />
     );
   }
 }
