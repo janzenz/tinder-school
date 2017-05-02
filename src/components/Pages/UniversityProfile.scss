@@ -37,7 +37,51 @@
       width: 80%;
     }
 
+    .scoresContainer {
+      .scoresHeader {
+        padding: 20px 0 10px;
+
+        h2, h3 {
+          margin: 0 0 5px;
+        }
+
+        h3 {
+          font-weight: normal;
+          font-size: 14px;
+        }
+      }
+
+      .scoresBody {
+        ul {
+          text-align: left;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            color: $tobacco-brown;
+            padding: 5px 0 0 30px;
+            position: relative;
+
+            &::before {
+              position: absolute;
+              top: 10px;
+              left: 0;
+              content: "";
+              background-color: $pearl-bush;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
     .statisticsContainer {
+      padding: 0 0 20px;
+
       .statisticsBody {
         .primary {
           h2, h3 {
@@ -45,18 +89,32 @@
           }
         }
 
+        .column {
+          &:first-of-type {
+            border-right: 1px solid $swirl;
+          }
+
+          .statValues {
+            min-height: 60px;
+          }
+        }
+
+
         h2, h3 {
           text-align: center;
           margin: 0;
+          color: $swirl;
         }
 
         h2 {
-          font-size: 27px;
+          font-size: 22px;
           margin-bottom: 5px;
         }
 
         h3 {
-          font-size: 20px;
+          font-size: 13px;
+          word-wrap: break-word;
+          hyphens: auto;
         }
       }
     }

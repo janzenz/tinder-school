@@ -4,6 +4,7 @@ import _capitalize from 'lodash/capitalize';
 import LinearProgress from 'material-ui/LinearProgress';
 import { Pie } from 'containers/Charts';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
 import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
 import { Accordion } from 'containers/Utilities';
 // Styles specific import
@@ -64,44 +65,53 @@ const UniversityProfile = ({ university }) => (
       <div>
         <img src="http://placehold.it/720x120" style={{ width: '100%' }} />
       </div>
-      <div>
-        <div className={gridClasses.row}>
-          <div className={gridClasses.col4}>
-            <h2>{kFormatter(university.nbOfStudents)}</h2>
-            <h3>Students</h3>
-          </div>
-          <div className={gridClasses.col4}>
-            <h2>{getPercentageString(university.nbOfAdmissions, university.nbOfApplicants) || 'N/A'}</h2>
-            <h3>Acceptance</h3>
-          </div>
-          <div className={gridClasses.col4}>
-            <h2>{kFormatter(university.tuitionFees)}</h2>
-            <h3>{`Tuition (${university.tuitionFeesCurrency.toUpperCase()})`}</h3>
+      <section className={classes.scoresContainer}>
+        <div className={classes.scoresHeader}>
+          <div className={gridClasses.row}>
+            <div className={gridClasses.col4}>
+              <h2>{kFormatter(university.nbOfStudents)}</h2>
+              <h3>STUDENTS</h3>
+            </div>
+            <div className={gridClasses.col4}>
+              <h2>{getPercentageString(university.nbOfAdmissions, university.nbOfApplicants) || 'N/A'}</h2>
+              <h3>ACCEPTANCE</h3>
+            </div>
+            <div className={gridClasses.col4}>
+              <h2>{kFormatter(university.tuitionFees)}</h2>
+              <h3>{`TUITION (${university.tuitionFeesCurrency.toUpperCase()})`}</h3>
+            </div>
           </div>
         </div>
-        <ul>
-          <li>{university.email}</li>
-          <li>{university.website || 'N/A'}</li>
-          <li>{`${_capitalize(university.location.locality)}, ${_capitalize(university.location.country)}`}</li>
-        </ul>
-        <RaisedButton
-          primary
-          style={styles.btnContainer}
-          buttonStyle={styles.btnBody}
-          label="Financial Aid & Scholarships"
-        />
-
+        <Divider />
+        <div className={classes.scoresBody}>
+          <ul>
+            <li>N/A</li>
+            <li>{university.email}</li>
+            <li>{university.website || 'N/A'}</li>
+            <li>{`${_capitalize(university.location.locality)}, ${_capitalize(university.location.country)}`}</li>
+          </ul>
+        </div>
+        <div className={classes.cta}>
+          <RaisedButton
+            primary
+            style={styles.btnContainer}
+            buttonStyle={styles.btnBody}
+            label="Financial Aid & Scholarships"
+          />
+        </div>
+      </section>
+      <section>
         <div className={classes.statisticsContainer}>
-          <h2>Demographics</h2>
+          <h2>DEMOGRAPHICS</h2>
           <h2>{`${Math.round(university.nbOfStudents/university.nbOfTeachers)} : 1`}</h2>
-          <p>STUDENT-TEACHER RATIO</p>
+          <p>STUDENT-TEACHER<br />RATIO</p>
           <div className={`${classes.statisticsBody} ${gridClasses.row}`}>
-            <div className={`${gridClasses.center} ${gridClasses.col6}`}>
+            <div className={`${classes.column} ${gridClasses.center} ${gridClasses.col6}`}>
               <Pie
                 primary
                 value={getPercentage(university.nbOfFemaleStudents, university.nbOfStudents)}
               />
-              <div className={gridClasses.row}>
+              <div className={`${gridClasses.row} ${classes.statValues}`}>
                 <div className={`${gridClasses.col6} ${classes.primary}`}>
                   <h2>{getPercentageString(university.nbOfFemaleStudents, university.nbOfStudents)}</h2>
                   <h3>FEMALE</h3>
@@ -112,9 +122,9 @@ const UniversityProfile = ({ university }) => (
                 </div>
               </div>
             </div>
-            <div className={gridClasses.col6}>
+            <div className={`${classes.column} ${gridClasses.center} ${gridClasses.col6}`}>
               <Pie value={getPercentage(university.nbOfIntlStudents, university.nbOfStudents)} />
-              <div className={gridClasses.row}>
+              <div className={`${gridClasses.row} ${classes.statValues}`}>
                 <div className={gridClasses.col6}>
                   <h2>{getPercentageString(university.nbOfLocalStudents, university.nbOfStudents)}</h2>
                   <h3>LOCAL</h3>
@@ -127,7 +137,7 @@ const UniversityProfile = ({ university }) => (
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 );
