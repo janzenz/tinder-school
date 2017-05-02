@@ -23,7 +23,6 @@ const styles = {
   },
   btnContainer: {
     borderRadius: 20,
-    width: '80%',
     overflow: 'hidden'
   },
   btnBody: {
@@ -51,12 +50,15 @@ const UniversityProfile = ({ university }) => (
           />
           <p>{`${university.userMatchRate}% CHANCES TO GET IN (EST.)`}</p>
         </div>
-        <RaisedButton
-          style={styles.btnContainer}
-          buttonStyle={styles.btnBody}
-          primary
-          label="Send Message"
-        />
+        <div className={classes.cta}>
+          <RaisedButton
+            fullWidth
+            primary
+            style={styles.btnContainer}
+            buttonStyle={styles.btnBody}
+            label="Send Message"
+          />
+        </div>
         <Accordion>{university.about}</Accordion>
       </section>
       <div>

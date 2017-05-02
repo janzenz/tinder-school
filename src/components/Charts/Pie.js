@@ -10,24 +10,25 @@ const Pie = ({ value, remaining, primary }) => (
     <circle
       cx="20"
       cy="20"
-      r="18"
+      r="16"
       fill="none"
       stroke={colors.swirl}
-      strokeWidth="2"
+      strokeWidth="4"
     />
     <circle
       cx="20"
       cy="20"
-      r="18"
+      r="16"
       fill="none"
       stroke={colors.acapulco}
-      strokeWidth="2"
+      strokeWidth="4"
       strokeDasharray={[value, remaining]}
-      {...(primary ?
+    />
+    {/*TODO: Apply offset*/}
+      {/*{...(primary ?
         { strokeDashoffset: (value + 15) } :
         { strokeDashoffset: 15 }
-      )}
-    />
+      )}*/}
   </svg>
 );
 

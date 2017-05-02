@@ -16,19 +16,26 @@
         p {
           font-size: 18px;
           margin: 0;
-        }
-
-        .userMatchRate {
-          margin: 35px 0;
-
-          p {
-            margin-top: 0.5em;
-            font-size: 14px;
-          }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }
 
+    .userMatchRate {
+      margin: 35px 0;
+
+      p {
+        margin-top: 0.5em;
+        font-size: 14px;
+      }
+    }
+
+    .cta {
+      margin: 35px auto;
+      width: 80%;
+    }
 
     .statisticsContainer {
       .statisticsBody {
