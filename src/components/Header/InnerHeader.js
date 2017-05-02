@@ -19,6 +19,10 @@ const styles = {
     width: 64,
     height: 64,
     padding: 0
+  },
+  appBar: {
+    position: 'fixed',
+    top: 0
   }
 };
 
@@ -30,13 +34,11 @@ export default class InnerHeader extends React.Component {
 
   render() {
     return (
-      <div>
-        <AppBar
-          style={{ position: 'fixed' }}
-          title={this.renderAppBarTitle()}
-          iconElementLeft={this.renderIconButtonLeft()}
-        />
-      </div>
+      <AppBar
+        style={styles.appBar}
+        title={this.renderAppBarTitle()}
+        iconElementLeft={this.renderIconButtonLeft()}
+      />
     );
   }
 

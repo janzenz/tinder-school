@@ -4,16 +4,22 @@ import { List } from 'material-ui/List';
 import IconButton from 'material-ui/IconButton';
 import InfoIcon from 'material-ui/svg-icons/action/info-outline';
 import FlatButton from 'material-ui/FlatButton';
+import { colors } from 'static/colorsPalette';
 import classes from './Selected.scss';
 
+const styles = {
+  infoButton: {
+    position: 'absolute'
+  }
+}
 // TODO: Display empty selected items.
 // TODO: Add functionality for the Icon.
 const Selected = ({ selected, total, seeAll, onClick, onToggleView }) => (
   <div className={classes.selectedContainer}>
     <div className={classes.selectedHeader}>
       <h2>{`Target Universities (${total})`}</h2>
-      <IconButton>
-        <InfoIcon color="#928572" />
+      <IconButton style={styles.infoButton}>
+        <InfoIcon color={colors.stonewall} />
       </IconButton>
     </div>
     <div className={classes.selectedBody}>

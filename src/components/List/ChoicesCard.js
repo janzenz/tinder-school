@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { kFormatter, getPercentage, getMatchRange } from 'modules/helpers';
+import { kFormatter, getPercentageString, getMatchRange } from 'modules/helpers';
 // TODO: Is this necessary?
 import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
@@ -19,7 +19,7 @@ const ChoicesCard = ({ university }) => (
           <h3>Students</h3>
         </div>
         <div className={classes.infoCol}>
-          <h2>{getPercentage(university.nbOfAdmissions, university.nbOfApplicants) || 'N/A'}</h2>
+          <h2>{getPercentageString(university.nbOfAdmissions, university.nbOfApplicants)}</h2>
           <h3>Acceptance</h3>
         </div>
         <div className={classes.infoCol}>
@@ -32,7 +32,7 @@ const ChoicesCard = ({ university }) => (
       </div>
     </div>
     <div className={classes.choicesCardFooter}>
-      <div>Goodwall Acceptance Calculator (GAC)</div>
+      <h4>Goodwall Acceptance Calculator (GAC)</h4>
       <div
         className={classes.universityCalc}
       >
