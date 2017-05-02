@@ -19,7 +19,7 @@ time, mark, audio, video {
   font-size: 36px;
   color: $tobacco-brown;
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 %headline-large{
@@ -38,7 +38,7 @@ time, mark, audio, video {
   font-size: 18px;
   line-height: 1;
   color: $tobacco-brown;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 %title{

@@ -19,6 +19,7 @@ export const colors = {
   merino: '#F6F1E9',
   albescentWhite: '#FBF7F0',
   white: '#FFFFFF',
+  bianca: '#FCF9F2',
 
 // Dak Palete
   thunder: '#3C293B',

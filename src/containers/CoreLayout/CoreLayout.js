@@ -26,7 +26,7 @@ export class CoreLayout extends React.Component {
   render(){
     const {children} = this.props;
     return <MuiThemeProvider muiTheme={this.state.computedTheme}>
-      <div style={{backgroundColor: colors.albescentWhite}}>
+      <div style={{backgroundColor: colors.bianca}}>
         {children}
       </div>
     </MuiThemeProvider>;

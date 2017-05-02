@@ -1,0 +1,16 @@
+.accordionContainer {
+  p {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease;
+
+    &.expand {
+      height: auto;
+    }
+
+    &.collapse {
+      height: 80px;
+    }
+  }
+}

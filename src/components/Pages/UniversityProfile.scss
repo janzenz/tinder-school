@@ -1,0 +1,59 @@
+@import 'styles/variables/colors';
+
+.universityProfileContainer {
+  .universityProfileBody {
+    text-align: center;
+
+    section {
+      padding: 0 20px;
+
+      &.info {
+        h1 {
+          font-size: 23px;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 18px;
+          margin: 0;
+        }
+
+        .userMatchRate {
+          margin: 35px 0;
+
+          p {
+            margin-top: 0.5em;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+
+    .statisticsContainer {
+      .statisticsBody {
+        .primary {
+          h2, h3 {
+            color: $acapulco;
+          }
+        }
+
+        h2, h3 {
+          text-align: center;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 27px;
+          margin-bottom: 5px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+}
+

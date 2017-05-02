@@ -33,6 +33,7 @@ export default {
     'fontWeight': 'bold',
     'textColor': colors.oldLavender,
     'primaryTextColor': colors.white,
+    'primaryColor': colors.acapulco,
     'secondaryColor': colors.swirl,
     'secondaryTextColor': colors.white
   },

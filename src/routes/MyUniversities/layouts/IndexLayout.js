@@ -1,6 +1,6 @@
 import React from 'react';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
-import InnerPage from 'components/InnerPage';
+import { InnerPage } from 'components/Pages';
 import { InnerHeader } from 'containers/Header';
 import { Choices, Selected } from 'containers/List';
 
