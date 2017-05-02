@@ -1,0 +1,16 @@
+@import 'styles/variables/colors';
+
+.statisticsContainer {
+  .statisticsBody {
+    display: flex;
+    width: 100%;
+
+    .infoCol {
+      width: 50%;
+
+      &:first-of-type {
+        border-right: 1px solid $swirl;
+      }
+    }
+  }
+}

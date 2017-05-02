@@ -8,10 +8,12 @@ import { universitySelector } from 'store/selectors/university';
 import { UniversityHeader } from 'components/Header';
 import _capitalize from 'lodash/capitalize';
 import LinearProgress from 'material-ui/LinearProgress';
-import CircularProgress from 'material-ui/CircularProgress';
+import { Pie } from 'containers/Charts';
 import RaisedButton from 'material-ui/RaisedButton';
 import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
 import { colors } from 'static/colorsPalette';
+import classes from './style.scss';
+import gridClasses from './grid.scss';
 
 export class IndexLayout extends Component {
   static propTypes = {
@@ -65,34 +67,38 @@ export class IndexLayout extends Component {
                   <li>{`${_capitalize(university.location.locality)}, ${_capitalize(university.location.country)}`}</li>
                 </ul>
               </div>
-              <RaisedButton label="Financial Aid &nbsp; Scholarships" />
-              <h2>Demographics</h2>
-              <h2>{}</h2>
-              <p>STUDENT-TEACHER RATIO</p>
-              <div>
-                <div>
-                  <div>
-                    <CircularProgress value={getPercentage(university.nbOfFemaleStudents, university.nbOfStudents)} />
-                    <svg height="100" width="100">
-                      <circle cx="50" cy="50" r="40" stroke-width="2" style={{ stroke: 'red', fill: 'none', strokeDasharray: getPercentage(university.nbOfFemaleStudents, university.nbOfStudents) }} />
-                      <circle cx="50" cy="50" r="40" stroke-width="2" style={{ stroke: '#ccc', fill: 'none' }} />
-                    </svg>
-                    <h2>{getPercentageString(university.nbOfFemaleStudents, university.nbOfStudents)}</h2>
-                    <h3>FEMALE</h3>
+              <RaisedButton label="Financial Aid & Scholarships" />
+
+              <div className={classes.statisticsContainer}>
+                <h2>Demographics</h2>
+                <h2>{`${Math.round(university.nbOfStudents/university.nbOfTeachers)} : 1`}</h2>
+                <p>STUDENT-TEACHER RATIO</p>
+                <div className={`${classes.statisticsBody} ${gridClasses.row}`}>
+                  <div className={gridClasses.col6}>
+                    <Pie value={getPercentage(university.nbOfFemaleStudents, university.nbOfStudents)} />
+                    <div className={gridClasses.row}>
+                      <div className={gridClasses.col6}>
+                        <h2>{getPercentageString(university.nbOfFemaleStudents, university.nbOfStudents)}</h2>
+                        <h3>FEMALE</h3>
+                      </div>
+                      <div className={gridClasses.col6}>
+                        <h2>{getPercentageString(university.nbOfMaleStudents, university.nbOfStudents)}</h2>
+                        <h3>MALE</h3>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h2>{getPercentageString(university.nbOfMaleStudents, university.nbOfStudents)}</h2>
-                    <h3>MALE</h3>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <h2>{getPercentageString(university.nbOfLocalStudents, university.nbOfStudents)}</h2>
-                    <h3>LOCAL</h3>
-                  </div>
-                  <div>
-                    <h2>{getPercentageString(university.nbOfIntlStudents, university.nbOfStudents)}</h2>
-                    <h3>INTERNATIONAL</h3>
+                  <div className={gridClasses.col6}>
+                    <Pie value={getPercentage(university.nbOfIntlStudents, university.nbOfStudents)} />
+                    <div className={gridClasses.row}>
+                      <div className={gridClasses.col6}>
+                        <h2>{getPercentageString(university.nbOfLocalStudents, university.nbOfStudents)}</h2>
+                        <h3>LOCAL</h3>
+                      </div>
+                      <div className={gridClasses.col6}>
+                        <h2>{getPercentageString(university.nbOfIntlStudents, university.nbOfStudents)}</h2>
+                        <h3>INTERNATIONAL</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
