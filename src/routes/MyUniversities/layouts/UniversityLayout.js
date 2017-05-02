@@ -13,7 +13,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
 import { colors } from 'static/colorsPalette';
 import classes from './style.scss';
-import gridClasses from './grid.scss';
+
+// TODO: This should imported in the core.scss but it doesn't seem to work.
+import gridClasses from 'styles/common/grid.scss';
 
 export class IndexLayout extends Component {
   static propTypes = {
@@ -74,10 +76,13 @@ export class IndexLayout extends Component {
                 <h2>{`${Math.round(university.nbOfStudents/university.nbOfTeachers)} : 1`}</h2>
                 <p>STUDENT-TEACHER RATIO</p>
                 <div className={`${classes.statisticsBody} ${gridClasses.row}`}>
-                  <div className={gridClasses.col6}>
-                    <Pie value={getPercentage(university.nbOfFemaleStudents, university.nbOfStudents)} />
+                  <div className={`${gridClasses.center} ${gridClasses.col6}`}>
+                    <Pie
+                      primary
+                      value={getPercentage(university.nbOfFemaleStudents, university.nbOfStudents)}
+                    />
                     <div className={gridClasses.row}>
-                      <div className={gridClasses.col6}>
+                      <div className={`${gridClasses.col6} ${classes.primary}`}>
                         <h2>{getPercentageString(university.nbOfFemaleStudents, university.nbOfStudents)}</h2>
                         <h3>FEMALE</h3>
                       </div>
@@ -94,7 +99,7 @@ export class IndexLayout extends Component {
                         <h2>{getPercentageString(university.nbOfLocalStudents, university.nbOfStudents)}</h2>
                         <h3>LOCAL</h3>
                       </div>
-                      <div className={gridClasses.col6}>
+                      <div className={`${gridClasses.col6} ${classes.primary}`}>
                         <h2>{getPercentageString(university.nbOfIntlStudents, university.nbOfStudents)}</h2>
                         <h3>INTERNATIONAL</h3>
                       </div>

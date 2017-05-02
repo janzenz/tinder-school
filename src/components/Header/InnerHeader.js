@@ -32,9 +32,8 @@ export default class InnerHeader extends React.Component {
     return (
       <div>
         <AppBar
-          style={{position: 'fixed'}}
+          style={{ position: 'fixed' }}
           title={this.renderAppBarTitle()}
-          titleStyle={styles.titleElementStyle}
           iconElementLeft={this.renderIconButtonLeft()}
         />
       </div>

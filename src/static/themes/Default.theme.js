@@ -12,6 +12,7 @@ export default {
   'appBar': {
     'height': 64,
     'loggedOutHeight': 200,
+    'color': colors.acapulco,
     'textColor': colors.white,
     'padding': '14px'
   },

@@ -2,15 +2,24 @@
 
 .statisticsContainer {
   .statisticsBody {
-    display: flex;
-    width: 100%;
-
-    .infoCol {
-      width: 50%;
-
-      &:first-of-type {
-        border-right: 1px solid $swirl;
+    .primary {
+      h2, h3 {
+        color: $acapulco;
       }
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 20px;
     }
   }
 }

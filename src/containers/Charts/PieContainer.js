@@ -3,15 +3,16 @@ import { Pie } from 'components/Charts';
 
 class PieContainer extends Component {
   static propTypes = {
-    value: PropTypes.number.isRequired
+    value: PropTypes.number.isRequired,
+    primary: PropTypes.bool
   }
 
   render() {
-    const { value } = this.props;
+    const { value, primary } = this.props;
     const remaining = 100 - value;
 
     return (
-      <Pie value={value} remaining={remaining} />
+      <Pie primary={primary} value={value} remaining={remaining} />
     );
   }
 }
