@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DefaultHeader from 'containers/Header';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 
 export class DefaultLayout extends React.Component {
+  static propTypes = {
+    backgroundColor: PropTypes.string
+  }
+
   constructor(props, context) {
     super(props, context);
   }
 
   render() {
-    const mainStyle = {};
+    const { backgroundColor } = this.props;
+    const mainStyle = {
+      backgroundColor
+    };
     mainStyle.paddingTop = this.props.muiTheme.appBar.height;
 
     return (

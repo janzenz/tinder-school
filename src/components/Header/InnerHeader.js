@@ -2,14 +2,12 @@ import React, { PropTypes } from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import ArrowLeftIcon from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
-import GwLogo from 'assets/gw-logo.svg';
 import classes from './InnerHeader.scss';
 
 const styles = {
   titleElementStyle: {
-    display: 'flex',
-    justifyContent: 'center',
-    overflow: 'visible'
+    fontSize: 19,
+    fontWeight: 'bold'
   },
   smallIcon: {
     width: 50,
@@ -22,11 +20,18 @@ const styles = {
   },
   appBar: {
     position: 'fixed',
-    top: 0
+    top: 0,
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    paddingLeft: 0,
+    paddingRight: 0
   }
 };
 
 export default class InnerHeader extends React.Component {
+  static propTypes = {
+    titleElement: PropTypes.string
+  }
 
   constructor(props, context) {
     super(props, context);
@@ -36,6 +41,7 @@ export default class InnerHeader extends React.Component {
     return (
       <AppBar
         style={styles.appBar}
+        titleStyle={styles.titleElementStyle}
         title={this.renderAppBarTitle()}
         iconElementLeft={this.renderIconButtonLeft()}
       />
@@ -54,11 +60,12 @@ export default class InnerHeader extends React.Component {
     );
   }
 
-  renderAppBarTitle() {
+  renderAppBarTitle = () => {
+    const { titleElement } = this.props;
     return(
       <div className={classes.appBarTitleCtn}>
         <div>
-          <img className={classes.gwLogo} src={GwLogo} />
+          {titleElement}
         </div>
       </div>
     );

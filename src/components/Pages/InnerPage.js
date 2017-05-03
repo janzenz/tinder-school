@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classes from './InnerPage.scss';
 
-export const InnerPage = ({titleText, backgroundClass, children}) => {
+export const InnerPage = ({ titleText, backgroundClass, children }) => {
   return(
     <div className={`${classes.genericLockedWrapper} ${classes[backgroundClass]}`} >
       <div className={classes.contentWrapper}>
@@ -14,6 +14,12 @@ export const InnerPage = ({titleText, backgroundClass, children}) => {
       </div>
     </div>
   );
+};
+
+InnerPage.propTypes = {
+  titleText: PropTypes.string,
+  backgroundClass: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default InnerPage;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
 import WelcomePage from 'components/WelcomePage/WelcomePage';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export class IndexLayout extends React.Component {
   constructor(props, context) {
@@ -27,7 +28,11 @@ export class IndexLayout extends React.Component {
               team for approval before doing so.
             </li>
           </ol>
-          <Link to="/my-universities">My Universities</Link>
+          <RaisedButton
+            primary
+            containerElement={<Link to="/my-universities" />}
+            label="My Universities"
+          />
         </WelcomePage>
       </DefaultLayout>
     );
