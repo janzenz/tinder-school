@@ -23,7 +23,15 @@
   }
 
   .selectedBody {
-
+    .selectedList {
+      & > div {
+        &:last-child {
+          hr {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .selectedFooter {

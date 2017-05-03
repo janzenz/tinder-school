@@ -8,6 +8,18 @@ import CircularProgress from 'material-ui/CircularProgress';
 import classes from './Choices.scss';
 import GwLogo from 'assets/gw-logo.svg';
 
+const styles = {
+  infoIcon: {
+    width: 45,
+    height: 45
+  },
+  actionIcon: {
+    width: 40,
+    height: 40,
+    marginTop: 5
+  }
+};
+
 const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) => (
   isFetching ? (
     <div className={classes.choicesContainer}>
@@ -29,19 +41,19 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
             zDepth={0}
             onTouchTap={rejectUniversity}
           >
-            <CloseIcon />
+            <CloseIcon style={styles.actionIcon} />
           </FloatingActionButton>
           <FloatingActionButton
             backgroundColor="transparent"
             zDepth={0}
           >
-            <InfoIcon />
+            <InfoIcon style={styles.infoIcon} />
           </FloatingActionButton>
           <FloatingActionButton
             zDepth={0}
             onTouchTap={chooseUniversity}
           >
-            <CheckIcon />
+            <CheckIcon style={styles.actionIcon} />
           </FloatingActionButton>
         </div>
       </div>

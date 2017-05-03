@@ -23,7 +23,7 @@ const Selected = ({ selected, total, seeAll, onClick, onToggleView }) => (
       </IconButton>
     </div>
     <div className={classes.selectedBody}>
-      <List>
+      <List className={classes.selectedList}>
         {selected && selected.map(university => {
           return (
             <SelectedItem
