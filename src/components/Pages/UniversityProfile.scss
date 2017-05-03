@@ -5,7 +5,7 @@
     text-align: center;
 
     section {
-      padding: 0 20px;
+      padding: 0 15px;
 
       &.info {
         h1 {
@@ -37,9 +37,16 @@
       width: 80%;
     }
 
+    .requirementsContainer {
+      .details {
+        text-align: left;
+      }
+    }
+
     .scoresContainer {
       .scoresHeader {
         padding: 20px 0 10px;
+        border-bottom: 4px solid $merino;
 
         h2, h3 {
           margin: 0 0 5px;
@@ -82,6 +89,19 @@
     .statisticsContainer {
       padding: 0 0 20px;
 
+      .statisticsHeader {
+
+        .ratio {
+          width: 90px;
+          margin: 0 auto;
+
+          h2 {
+            margin: 0;
+            font-size: 22px;
+          }
+        }
+      }
+
       .statisticsBody {
         .primary {
           h2, h3 {
@@ -91,11 +111,18 @@
 
         .column {
           &:first-of-type {
+            padding-right: 20px;
             border-right: 1px solid $swirl;
           }
 
+          &:nth-child(2) {
+            padding-left: 20px;
+          }
+
           .statValues {
+            margin-top: 10px;
             min-height: 60px;
+            align-items: flex-start;
           }
         }
 

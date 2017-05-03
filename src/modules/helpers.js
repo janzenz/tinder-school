@@ -7,12 +7,7 @@ export const kFormatter = (value) => {
 
   const result = value / 1000;
 
-  // Check for remainder
-  if (result % 1 === 0) {
-    return `${result}k`;
-  } else {
-    return `${result.toFixed(1)}k`;
-  }
+  return `${result.toFixed(1).replace(/\.0+$/,'')}k`;
 };
 
 export const getPercentage = (numerator, denominator) => {
@@ -40,4 +35,4 @@ export const getMatchRange = (rate) => {
   } if (_inRange(rate, 76, 100)) {
     return 75;
   }
-}
+};

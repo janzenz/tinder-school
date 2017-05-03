@@ -3,11 +3,14 @@ import { UniversityHeader } from 'components/Header';
 import _capitalize from 'lodash/capitalize';
 import LinearProgress from 'material-ui/LinearProgress';
 import { Pie } from 'containers/Charts';
-import RaisedButton from 'material-ui/RaisedButton';
+import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
+import RaisedButton from 'material-ui/RaisedButton';
 import { Accordion } from 'containers/Utilities';
-// Styles specific import
+import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
+import _random from 'lodash/random';
+import _inRange from 'lodash/inRange';
+// Styles specific imports
 import { colors } from 'static/colorsPalette';
 import classes from './UniversityProfile.scss';
 
@@ -15,10 +18,17 @@ import classes from './UniversityProfile.scss';
 import gridClasses from 'styles/common/grid.scss';
 
 const styles = {
-  linearProgress: {
+  chanceToGet: {
     height: 14,
     width: '90%',
-    borderRadius: 9,
+    borderRadius: 5,
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+  entryRequirements: {
+    height: 10,
+    width: '90%',
+    borderRadius: 0,
     marginLeft: 'auto',
     marginRight: 'auto'
   },
@@ -30,6 +40,32 @@ const styles = {
     borderRadius: 20
   }
 };
+
+class Requirements {
+  constructor() {
+    this.rate = _random(100);
+    this.act = _random(10);
+    this.gpa = _random(4.5).toFixed(1).replace(/\.0+$/,'');
+  }
+
+  translateRate = () => {
+    if (_inRange(this.rate, 0, 25)) {
+      return 'Easy';
+    } else if (_inRange(this.rate, 26, 50)) {
+      return 'Moderate';
+    } else if (_inRange(this.rate, 51, 75)) {
+      return 'Intermediate';
+    } if (_inRange(this.rate, 76, 100)) {
+      return 'Difficult';
+    }
+  }
+
+  getGrade = () => {
+    return 'ABC'.charAt(_random(2));
+  }
+}
+
+const requirement = new Requirements();
 
 const UniversityProfile = ({ university }) => (
   <div className={classes.universityProfileContainer}>
@@ -44,7 +80,7 @@ const UniversityProfile = ({ university }) => (
         <p>{university.ownershipType.toUpperCase()}</p>
         <div className={classes.userMatchRate}>
           <LinearProgress
-            style={styles.linearProgress}
+            style={styles.chanceToGet}
             mode="determinate"
             value={university.userMatchRate}
             color={colors.acapulco}
@@ -63,7 +99,7 @@ const UniversityProfile = ({ university }) => (
         <Accordion>{university.about}</Accordion>
       </section>
       <div>
-        <img src="http://placehold.it/720x120" style={{ width: '100%' }} />
+        <img src="http://placehold.it/720x300" style={{ width: '100%' }} />
       </div>
       <section className={classes.scoresContainer}>
         <div className={classes.scoresHeader}>
@@ -82,7 +118,6 @@ const UniversityProfile = ({ university }) => (
             </div>
           </div>
         </div>
-        <Divider />
         <div className={classes.scoresBody}>
           <ul>
             <li>N/A</li>
@@ -101,10 +136,42 @@ const UniversityProfile = ({ university }) => (
         </div>
       </section>
       <section>
+        <div className={classes.requirementsContainer}>
+          <h2>ENTRY REQUIREMENTS</h2>
+          <LinearProgress
+            style={styles.entryRequirements}
+            mode="determinate"
+            value={requirement.rate}
+            color={colors.acapulco}
+          />
+          <p>{requirement.translateRate()}</p>
+          <List className={classes.details}>
+            <Divider />
+            <ListItem primaryText="Average Grade (ABC)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.getGrade()}</span>} />
+            <Divider />
+            <ListItem primaryText="ACT" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.act}</span>} />
+            <Divider />
+            <ListItem primaryText="GPA (/4.5)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.gpa}</span>} />
+          </List>
+        </div>
+      </section>
+      <section>
         <div className={classes.statisticsContainer}>
           <h2>DEMOGRAPHICS</h2>
-          <h2>{`${Math.round(university.nbOfStudents/university.nbOfTeachers)} : 1`}</h2>
-          <p>STUDENT-TEACHER<br />RATIO</p>
+          <div className={classes.statisticsHeader}>
+            <div className={`${classes.ratio} ${gridClasses.row}`}>
+              <div className={gridClasses.col4}>
+                <h2>{Math.round(university.nbOfStudents/university.nbOfTeachers)}</h2>
+              </div>
+              <div className={gridClasses.col4}>
+                <h2>:</h2>
+              </div>
+              <div className={gridClasses.col4}>
+                <h2>1</h2>
+              </div>
+            </div>
+            <p>STUDENT-TEACHER<br />RATIO</p>
+          </div>
           <div className={`${classes.statisticsBody} ${gridClasses.row}`}>
             <div className={`${classes.column} ${gridClasses.center} ${gridClasses.col6}`}>
               <Pie
