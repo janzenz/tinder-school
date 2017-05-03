@@ -42,6 +42,7 @@ const styles = {
 };
 
 class Requirements {
+  // TODO: Add params injection for real requirements object
   constructor() {
     this.rate = _random(100);
     this.act = _random(10);
