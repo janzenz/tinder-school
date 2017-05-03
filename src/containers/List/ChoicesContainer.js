@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Choices } from 'components/List';
 import { chooseUniversity } from 'store/actions/thunks';
+import * as constants from 'config/constants';
+import _debounce from 'lodash/debounce';
 
 class ChoicesContainer extends Component {
   static propTypes = {
@@ -11,12 +13,16 @@ class ChoicesContainer extends Component {
   }
 
   chooseUniversity = () => {
-    this.props.chooseUniversity(true);
+    this._debouncedChoose(true);
   }
 
   rejectUniversity = () => {
-    this.props.chooseUniversity(false);
+    this._debouncedChoose(false);
   }
+
+  _debouncedChoose = _debounce((accept) => {
+    this.props.chooseUniversity(accept);
+  }, constants.CARD_COMPLETION_TIME, { leading: true })
 
   render() {
     const { choices, isFetching } = this.props;
