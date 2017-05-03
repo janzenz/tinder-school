@@ -42,6 +42,10 @@ const styles = {
   },
   btnLabel: {
     fontSize: 15
+  },
+  listStyle: {
+    fontWeight: 'bold',
+    color: colors.tobaccoBrown
   }
 };
 
@@ -154,11 +158,11 @@ const UniversityProfile = ({ university }) => (
           <p>{requirement.translateRate()}</p>
           <List className={classes.details}>
             <Divider />
-            <ListItem primaryText="Average Grade (ABC)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.getGrade()}</span>} />
+            <ListItem style={styles.listStyle} primaryText="Average Grade (ABC)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.getGrade()}</span>} />
             <Divider />
-            <ListItem primaryText="ACT" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.act}</span>} />
+            <ListItem style={styles.listStyle} primaryText="ACT" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.act}</span>} />
             <Divider />
-            <ListItem primaryText="GPA (/4.5)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.gpa}</span>} />
+            <ListItem style={styles.listStyle} primaryText="GPA (/4.5)" rightIcon={<span style={{ textAlign: 'center' }}>{requirement.gpa}</span>} />
           </List>
         </div>
       </section>
