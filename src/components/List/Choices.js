@@ -6,6 +6,7 @@ import InfoIcon from 'material-ui/svg-icons/action/info-outline';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import classes from './Choices.scss';
+import GwLogo from 'assets/gw-logo.svg';
 
 const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) => (
   isFetching ? (
@@ -15,34 +16,42 @@ const Choices = ({ choices, chooseUniversity, rejectUniversity, isFetching }) =>
       </div>
     </div>
   ) : (
-    <div className={classes.choicesContainer}>
-      <div className={classes.choicesBody}>
-        {choices.map(university => (
-          <ChoicesCard key={university.id} university={university} />
-        ))}
+    choices.length > 0 ? (
+      <div className={classes.choicesContainer}>
+        <div className={classes.choicesBody}>
+          {choices.map(university => (
+            <ChoicesCard key={university.id} university={university} />
+          ))}
+        </div>
+        <div className={classes.choicesFooter}>
+          <FloatingActionButton
+            secondary
+            zDepth={0}
+            onTouchTap={rejectUniversity}
+          >
+            <CloseIcon />
+          </FloatingActionButton>
+          <FloatingActionButton
+            backgroundColor="transparent"
+            zDepth={0}
+          >
+            <InfoIcon />
+          </FloatingActionButton>
+          <FloatingActionButton
+            zDepth={0}
+            onTouchTap={chooseUniversity}
+          >
+            <CheckIcon />
+          </FloatingActionButton>
+        </div>
       </div>
-      <div className={classes.choicesFooter}>
-        <FloatingActionButton
-          secondary
-          zDepth={0}
-          onTouchTap={rejectUniversity}
-        >
-          <CloseIcon />
-        </FloatingActionButton>
-        <FloatingActionButton
-          backgroundColor="transparent"
-          zDepth={0}
-        >
-          <InfoIcon />
-        </FloatingActionButton>
-        <FloatingActionButton
-          zDepth={0}
-          onTouchTap={chooseUniversity}
-        >
-          <CheckIcon />
-        </FloatingActionButton>
+    ) : (
+      <div className={classes.choicesContainer}>
+        <div className={classes.choicesBody}>
+          <img src={GwLogo} />
+        </div>
       </div>
-    </div>
+    )
   )
 );
 
