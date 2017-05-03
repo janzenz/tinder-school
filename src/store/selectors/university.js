@@ -1,4 +1,3 @@
-// TODO: Might not be perfect so look into this again later.
 import { createSelector } from 'reselect';
 import _find from 'lodash/find';
 
