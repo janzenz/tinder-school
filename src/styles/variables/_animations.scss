@@ -1,7 +1,8 @@
-@keyframes surfRight {
+@keyframes swipeRight {
   0% {
+    transform: translateX(90px) translateY(-9px) rotate(-2deg) scale(0.9);
   }
-  30% {
+  75% {
     transform: translateX(270px) translateY(-50px) rotate(-15deg) scale(0.8);
   }
   100% {
@@ -9,8 +10,9 @@
   }
 }
 
-@keyframes surfLeft {
+@keyframes swipeLeft {
   0% {
+    transform: translateX(-90px) translateY(9px) rotate(6deg);
   }
   35% {
     transform: translateX(-250px) translateY(60px) rotate(15deg);

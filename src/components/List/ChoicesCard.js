@@ -5,12 +5,21 @@ import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
 import classes from './ChoicesCard.scss';
 
-const ChoicesCard = ({ animationClass, university, onTouchMove, onTouchStart, onTouchEnd }) => (
+const ChoicesCard = ({ distance, animationClass, university, onTouchMove, onTouchStart, onTouchEnd }) => (
   <div
     className={`${classes.choicesCardContainer} ${classes[animationClass]}`}
     onTouchMove={onTouchMove}
     onTouchStart={onTouchStart}
     onTouchEnd={onTouchEnd}
+    {...(distance !== 0 && (distance > 0 ? {
+      style: {
+        transform: `translateX(${distance}px) translateY(-${distance / 10}px) rotate(-2deg) scale(0.9)`
+      }
+    } : {
+      style: {
+        transform: `translateX(${distance}px) translateY(${Math.abs(distance) / 10}px) rotate(${Math.abs(distance) / 15}deg)`
+      }
+    }))}
   >
     <div className={classes.choicesCardHeader}>
       <UniversityHeader />
@@ -59,6 +68,7 @@ const ChoicesCard = ({ animationClass, university, onTouchMove, onTouchStart, on
 );
 
 ChoicesCard.propTypes = {
+  distance: PropTypes.number.isRequired,
   animationClass: PropTypes.string,
   university: PropTypes.object,
   onTouchMove: PropTypes.func,

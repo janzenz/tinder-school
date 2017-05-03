@@ -17,14 +17,14 @@
   transition: all .75s;
 
   &.swipeRight {
-    animation-duration: 1s;
-    animation-name: surfRight;
+    animation-duration: 1.5s;
+    animation-name: swipeRight;
     animation-fill-mode: forwards;
   }
 
   &.swipeLeft {
-    animation-duration: 1s;
-    animation-name: surfLeft;
+    animation-duration: 1.5s;
+    animation-name: swipeLeft;
     animation-fill-mode: forwards;
   }
 
