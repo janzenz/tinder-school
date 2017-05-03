@@ -8,6 +8,12 @@ class UniversityProfileContainer extends Component {
     university: PropTypes.object.isRequired
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  }
+
   render() {
     const { university } = this.props;
 
