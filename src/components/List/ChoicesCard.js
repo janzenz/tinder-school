@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { kFormatter, getPercentageString, getMatchRange } from 'modules/helpers';
-// TODO: Is this necessary?
 import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
 import classes from './ChoicesCard.scss';

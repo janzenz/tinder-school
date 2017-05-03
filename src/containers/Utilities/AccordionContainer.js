@@ -8,7 +8,7 @@ class AccordionContainer extends Component {
 
   // The value that will determine if this component will display
   //  the Expand/Collapse button.
-  static maxHeight = 70;
+  static maxHeight = 68;
 
   constructor() {
     super();

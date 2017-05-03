@@ -46,11 +46,10 @@ const styles = {
 };
 
 class Requirements {
-  // TODO: Add params injection for real requirements object
-  constructor() {
-    this.rate = _random(100);
-    this.act = _random(10);
-    this.gpa = _random(4.5).toFixed(1).replace(/\.0+$/,'');
+  constructor(rate, act, gpa) {
+    this.rate = rate || _random(100);
+    this.act = act || _random(10);
+    this.gpa = gpa || _random(4.5).toFixed(1).replace(/\.0+$/,'');
   }
 
   translateRate = () => {

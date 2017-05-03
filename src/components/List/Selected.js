@@ -12,7 +12,6 @@ const styles = {
     position: 'absolute'
   }
 }
-// TODO: Display empty selected items.
 // TODO: Add functionality for the Icon.
 const Selected = ({ selected, total, seeAll, onClick, onToggleView }) => (
   <div className={classes.selectedContainer}>
