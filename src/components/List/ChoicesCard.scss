@@ -1,33 +1,46 @@
 @import 'styles/variables/_colors';
+@import 'styles/variables/_animations';
 
 .choicesCardContainer {
   border-radius: 5px;
   overflow: hidden;
   background-color: #fff;
-  width: 370px;
   padding-bottom: 20px;
-  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.15);
+  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.30);
+  width: 380px;
+  max-width: 380px;
+  min-height: 435px;
 
   // Card-mimic Specific styles
   z-index: 0;
   position: absolute;
   transition: all .75s;
 
+  &.swipeRight {
+    animation-duration: 1s;
+    animation-name: surfRight;
+    animation-fill-mode: forwards;
+  }
+
+  &.swipeLeft {
+    animation-duration: 1s;
+    animation-name: surfLeft;
+    animation-fill-mode: forwards;
+  }
+
   &:first-of-type {
-    top: 10px;
     z-index: 3;
+    transform: translateY(-3%);
   }
 
   &:nth-child(n + 2) {
-    top: 15px;
     z-index: 2;
-    width: 365px;
+    transform: scale(0.95) translateY(1.5%);
   }
 
   &:nth-child(n + 3) {
-    top: 20px;
     z-index: 1;
-    width: 360px;
+    transform: scale(0.90) translateY(6%);
   }
 
   .choicesCardHeader {

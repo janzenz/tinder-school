@@ -5,8 +5,13 @@ import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
 import classes from './ChoicesCard.scss';
 
-const ChoicesCard = ({ university }) => (
-  <div className={classes.choicesCardContainer}>
+const ChoicesCard = ({ animationClass, university, onTouchMove, onTouchStart, onTouchEnd }) => (
+  <div
+    className={`${classes.choicesCardContainer} ${classes[animationClass]}`}
+    onTouchMove={onTouchMove}
+    onTouchStart={onTouchStart}
+    onTouchEnd={onTouchEnd}
+  >
     <div className={classes.choicesCardHeader}>
       <UniversityHeader />
     </div>
@@ -54,7 +59,11 @@ const ChoicesCard = ({ university }) => (
 );
 
 ChoicesCard.propTypes = {
-  university: PropTypes.object
+  animationClass: PropTypes.string,
+  university: PropTypes.object,
+  onTouchMove: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onTouchEnd: PropTypes.func
 };
 
 export default ChoicesCard;

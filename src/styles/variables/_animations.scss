@@ -1,0 +1,21 @@
+@keyframes surfRight {
+  0% {
+  }
+  30% {
+    transform: translateX(270px) translateY(-50px) rotate(-15deg) scale(0.8);
+  }
+  100% {
+    transform: translateX(470px) translateY(50px) rotate(-15deg) scale(0.8);
+  }
+}
+
+@keyframes surfLeft {
+  0% {
+  }
+  35% {
+    transform: translateX(-250px) translateY(60px) rotate(15deg);
+  }
+  100% {
+    transform: translateX(-470px) translateY(200px) rotate(15deg);
+  }
+}

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import ChoicesCard from './ChoicesCard';
+import { ChoicesCard } from 'containers/List';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
 import InfoIcon from 'material-ui/svg-icons/action/info-outline';
