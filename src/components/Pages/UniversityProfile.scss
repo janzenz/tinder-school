@@ -9,26 +9,26 @@
 
       &.info {
         h1 {
-          font-size: 23px;
+          font-size: 20px;
           margin-bottom: 5px;
         }
 
         p {
-          font-size: 18px;
+          font-size: 15px;
           margin: 0;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
       }
-    }
 
-    .userMatchRate {
-      margin: 35px 0;
+      .userMatchRate {
+        margin: 35px 0;
 
-      p {
-        margin-top: 0.5em;
-        font-size: 14px;
+        p {
+          margin-top: 0.6em;
+          font-size: 14px;
+        }
       }
     }
 
@@ -69,6 +69,7 @@
             color: $tobacco-brown;
             padding: 5px 0 0 30px;
             position: relative;
+            font-size: 15px;
 
             &::before {
               position: absolute;

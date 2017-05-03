@@ -18,7 +18,7 @@ import gridClasses from 'styles/common/grid.scss';
 
 const styles = {
   chanceToGet: {
-    height: 11,
+    height: 9,
     width: '90%',
     borderRadius: 5,
     marginLeft: 'auto',
@@ -39,6 +39,9 @@ const styles = {
   },
   btnBody: {
     borderRadius: 20
+  },
+  btnLabel: {
+    fontSize: 15
   }
 };
 
@@ -95,13 +98,14 @@ const UniversityProfile = ({ university }) => (
             primary
             style={styles.btnContainer}
             buttonStyle={styles.btnBody}
+            labelStyle={styles.btnLabel}
             label="Send Message"
           />
         </div>
         <Accordion>{university.about}</Accordion>
       </section>
       <div>
-        <img src="http://placehold.it/720x300" style={{ width: '100%' }} />
+        <img src="http://placehold.it/720x350" style={{ width: '100%' }} />
       </div>
       <section className={classes.scoresContainer}>
         <div className={classes.scoresHeader}>
@@ -131,7 +135,9 @@ const UniversityProfile = ({ university }) => (
         <div className={classes.cta}>
           <RaisedButton
             primary
+            fullWidth
             style={styles.btnContainer}
+            labelStyle={styles.btnLabel}
             buttonStyle={styles.btnBody}
             label="Financial Aid & Scholarships"
           />

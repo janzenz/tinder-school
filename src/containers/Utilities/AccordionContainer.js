@@ -6,7 +6,9 @@ class AccordionContainer extends Component {
     children: PropTypes.node.isRequired
   }
 
-  static maxHeight = 80;
+  // The value that will determine if this component will display
+  //  the Expand/Collapse button.
+  static maxHeight = 70;
 
   constructor() {
     super();

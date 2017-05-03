@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classes from './UniversityHeader.scss';
 
 const UniversityHeader = () => {
@@ -6,7 +6,7 @@ const UniversityHeader = () => {
     <div
       className={classes.universityHeader}
       style={{
-        backgroundImage: `url(http://placehold.it/350x150)`,
+        backgroundImage: `url(http://placehold.it/350x140)`,
         backgroundSize: 'cover'
       }}
     >
