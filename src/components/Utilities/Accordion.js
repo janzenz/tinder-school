@@ -7,7 +7,7 @@ import classes from './Accordion.scss';
 
 const Accordion = ({ showExpand, expand, toggleExpand, children, bindContainer }) => (
   <div
-    ref={(container) => bindContainer(container)}
+    ref={bindContainer}
     className={classes.accordionContainer}
   >
     <p className={showExpand && (expand ? classes.expand : classes.collapse)}>
