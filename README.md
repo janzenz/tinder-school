@@ -20,8 +20,8 @@ A bit of overview how I engineered this project; I started with Routing and crea
 So here are noteworthy techniques and optimizations I did for this Project:
 - Abused **PropTypes** as much as possible since it really helps a lot. I made sure that I covered all the props for each `components` and `container`.
 - **Reselect** I used reselect to memoize the result when selecting Universities.
-- I used **Debouncing** and **Throttle** for touch events and button action events to improve performance on the UI.
 - I used **Thunks** to retrieve the University data and kept my **Reducers** as *PURE* as possible. You will know it is so since the **time-travel-debugging (TTD)** works well.
+- I used **Debouncing** and **Throttle** for touch events and **Thunks** to improve performance on the UI.
 - I created a provision for the **Entry Requirements** section instead of just manually coding the page wih static HTML. `src/components/Pages/UniversityProfile.js:48`
 - I also linked `react-router-redux` in the configuration to also make the routes available for TTD.
 - I updated the package of Material UI.
