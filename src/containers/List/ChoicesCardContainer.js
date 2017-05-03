@@ -76,7 +76,7 @@ class ChoicesCardContainer extends Component {
             } else {
               chooseUniversity(false);
             }
-          }, 1500);
+          }, 1000);
         });
       }
     }

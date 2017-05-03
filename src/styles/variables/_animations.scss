@@ -2,7 +2,7 @@
   0% {
     transform: translateX(90px) translateY(-9px) rotate(-2deg) scale(0.9);
   }
-  75% {
+  50% {
     transform: translateX(270px) translateY(-50px) rotate(-15deg) scale(0.8);
   }
   100% {
@@ -19,5 +19,27 @@
   }
   100% {
     transform: translateX(-470px) translateY(200px) rotate(15deg);
+  }
+}
+
+@keyframes approveCard {
+  0% {
+  }
+  35% {
+    transform: translateX(270px) translateY(-50px) rotate(-15deg) scale(0.8);
+  }
+  100% {
+    transform: translateX(470px) translateY(50px) rotate(-15deg) scale(0.8);
+  }
+}
+
+@keyframes rejectCard {
+  0% {
+  }
+  35% {
+    transform: translateX(270px) translateY(-50px) rotate(-15deg) scale(0.8);
+  }
+  100% {
+    transform: translateX(470px) translateY(50px) rotate(-15deg) scale(0.8);
   }
 }
