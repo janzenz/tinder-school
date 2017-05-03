@@ -29,12 +29,12 @@ class ChoicesCardContainer extends Component {
 
   _move = (e) => {
     const touch = e.changedTouches[0];
-    const distX = touch.pageX - this.startX; // get horizontal dist traveled by finger while in contact with surface
-    const distY = touch.pageY - this.startY; // get vertical dist traveled by finger while in contact with surface
-    if (Math.abs(distX) > Math.abs(distY)){ // if distance traveled horizontally is greater than vertically, consider this a horizontal movement
-        this.direction = (distX < 0)? 'left' : 'right';
-    } else { // else consider this a vertical movement
-        this.direction = (distY < 0)? 'up' : 'down';
+    const distX = touch.pageX - this.startX;
+    const distY = touch.pageY - this.startY;
+    if (Math.abs(distX) > Math.abs(distY)) {
+      this.direction = (distX < 0)? 'left' : 'right';
+    } else {
+      this.direction = (distY < 0)? 'up' : 'down';
     }
   }
 
