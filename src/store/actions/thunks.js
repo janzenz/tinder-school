@@ -1,6 +1,7 @@
 import * as creators from './creators';
 import MockApi from 'api';
 import * as constants from 'config/constants';
+import _debounce from 'lodash/debounce';
 
 export const fetchUniversities = () => {
   return (dispatch) => {
@@ -16,19 +17,23 @@ export const fetchUniversities = () => {
   };
 };
 
+const _debouncedChoosing = _debounce((choose, dispatch, getState) => {
+  const university = getState().universities.choices.slice(0,1);
+
+  if (choose) {
+    dispatch(creators.acceptUniversity(university[0]));
+  } else {
+    dispatch(creators.rejectUniversity(university[0]));
+  }
+
+  setTimeout(() => {
+    dispatch(creators.popUniversity());
+    dispatch(creators.cleanUpRecentState());
+  }, constants.CARD_COMPLETION_TIME);
+}, constants.CARD_COMPLETION_TIME, { leading: true, trailing: false });
+
 export const chooseUniversity = (choose) => {
   return (dispatch, getState) => {
-    const university = getState().universities.choices.slice(0,1);
-
-    if (choose) {
-      dispatch(creators.acceptUniversity(university[0]));
-    } else {
-      dispatch(creators.rejectUniversity(university[0]));
-    }
-
-    setTimeout(() => {
-      dispatch(creators.popUniversity());
-      dispatch(creators.cleanUpRecentState());
-    }, constants.CARD_COMPLETION_TIME);
+    _debouncedChoosing(choose, dispatch, getState);
   };
 };

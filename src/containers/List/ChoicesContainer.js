@@ -13,16 +13,12 @@ class ChoicesContainer extends Component {
   }
 
   chooseUniversity = () => {
-    this._debouncedChoose(true);
+    this.props.chooseUniversity(true);
   }
 
   rejectUniversity = () => {
-    this._debouncedChoose(false);
+    this.props.chooseUniversity(false);
   }
-
-  _debouncedChoose = _debounce((accept) => {
-    this.props.chooseUniversity(accept);
-  }, constants.CARD_COMPLETION_TIME, { leading: true })
 
   render() {
     const { choices, isFetching } = this.props;
