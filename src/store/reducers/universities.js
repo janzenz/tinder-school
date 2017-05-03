@@ -14,7 +14,7 @@ const choices = (state = [], action) => {
 
 const selected = (state = [], action) => {
   switch(action.type) {
-    case types.PICK_UNIVERSITY:
+    case types.ACCEPT_UNIVERSITY:
       return state.concat(action.university);
     default:
       return state;

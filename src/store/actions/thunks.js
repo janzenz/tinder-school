@@ -20,7 +20,7 @@ export const chooseUniversity = (choose) => {
     const university = getState().universities.choices.slice(0,1);
 
     if (choose) {
-      dispatch(creators.pickUniversity(university[0]));
+      dispatch(creators.acceptUniversity(university[0]));
     } else {
       dispatch(creators.rejectUniversity(university));
     }
