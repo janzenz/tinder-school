@@ -1,0 +1,1 @@
+export const CARD_COMPLETION_TIME = 1000;

@@ -30,6 +30,32 @@ const rejected = (state = [], action) => {
   }
 };
 
+// This keeps track of the recent actioned University
+const recentUniversityId = (state = null, action) => {
+  switch(action.type) {
+    case types.ACCEPT_UNIVERSITY:
+    case types.REJECT_UNIVERSITY:
+      return action.university.id;
+    case types.CLEANUP_RECENT_STATE:
+      return null;
+    default:
+      return state;
+  }
+};
+
+const recentAction = (state = null, action) => {
+  switch(action.type) {
+    case types.ACCEPT_UNIVERSITY:
+      return types.ACCEPT_UNIVERSITY;
+    case types.REJECT_UNIVERSITY:
+      return types.REJECT_UNIVERSITY;
+    case types.CLEANUP_RECENT_STATE:
+      return null;
+    default:
+      return state;
+  }
+};
+
 const isFetching = (state = false, action) => {
   switch(action.type) {
     case types.RECEIVE_UNIVERSITIES:
@@ -65,5 +91,7 @@ export default combineReducers({
   selected,
   rejected,
   active,
-  seeAll
+  seeAll,
+  recentUniversityId,
+  recentAction
 });

@@ -2,12 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { ChoicesCard } from 'components/List';
 import { chooseUniversity } from 'store/actions/thunks';
+import { ACCEPT_UNIVERSITY } from 'store/actions/types';
+import * as constants from 'config/constants';
 import _throttle from 'lodash/throttle';
 
 class ChoicesCardContainer extends Component {
   static propTypes = {
     university: PropTypes.object.isRequired,
-    chooseUniversity: PropTypes.func
+    chooseUniversity: PropTypes.func,
+    recentUniversityId: PropTypes.number,
+    recentAction: PropTypes.string
   }
 
   constructor() {
@@ -76,14 +80,14 @@ class ChoicesCardContainer extends Component {
             } else {
               chooseUniversity(false);
             }
-          }, 1000);
+          }, constants.CARD_COMPLETION_TIME);
         });
       }
     }
   }
 
   render() {
-    const { university } = this.props;
+    const { university, recentUniversityId, recentAction } = this.props;
     const { swiped, distance } = this.state;
 
     return (
@@ -91,6 +95,10 @@ class ChoicesCardContainer extends Component {
         {...(swiped && (this.direction === 'right' ?
           { animationClass: 'swipeRight' } :
           { animationClass: 'swipeLeft' }
+        ))}
+        {...(recentUniversityId === university.id && (recentAction === ACCEPT_UNIVERSITY ?
+          { animationClass: 'approveCard' } :
+          { animationClass: 'rejectCard' }
         ))}
         distance={distance}
         university={university}
@@ -102,8 +110,13 @@ class ChoicesCardContainer extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  recentUniversityId: state.universities.recentUniversityId,
+  recentAction: state.universities.recentAction
+});
+
 const mapActionCreators = {
   chooseUniversity
 };
 
-export default connect(null, mapActionCreators)(ChoicesCardContainer);
+export default connect(mapStateToProps, mapActionCreators)(ChoicesCardContainer);

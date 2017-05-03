@@ -18,6 +18,10 @@ export const acceptUniversity = (university) => ({
   university
 });
 
+export const cleanUpRecentState = () => ({
+  type: types.CLEANUP_RECENT_STATE
+});
+
 export const rejectUniversity = (university) => ({
   type: types.REJECT_UNIVERSITY,
   university

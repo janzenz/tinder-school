@@ -1,5 +1,6 @@
 import * as creators from './creators';
 import MockApi from 'api';
+import * as constants from 'config/constants';
 
 export const fetchUniversities = () => {
   return (dispatch) => {
@@ -22,9 +23,12 @@ export const chooseUniversity = (choose) => {
     if (choose) {
       dispatch(creators.acceptUniversity(university[0]));
     } else {
-      dispatch(creators.rejectUniversity(university));
+      dispatch(creators.rejectUniversity(university[0]));
     }
 
-    dispatch(creators.popUniversity());
+    setTimeout(() => {
+      dispatch(creators.popUniversity());
+      dispatch(creators.cleanUpRecentState());
+    }, constants.CARD_COMPLETION_TIME);
   };
 };

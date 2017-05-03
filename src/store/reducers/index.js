@@ -10,7 +10,9 @@ universities: {
   selected: [],
   rejected: [],
   active: null,
-  seeAll: false
+  seeAll: false,
+  recentUniversityId: null,
+  recentAction: null
 }
 */
 
