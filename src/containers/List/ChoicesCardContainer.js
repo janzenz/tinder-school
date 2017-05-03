@@ -96,10 +96,13 @@ class ChoicesCardContainer extends Component {
           { animationClass: 'swipeRight' } :
           { animationClass: 'swipeLeft' }
         ))}
-        {...(recentUniversityId === university.id && (recentAction === ACCEPT_UNIVERSITY ?
-          { animationClass: 'approveCard' } :
-          { animationClass: 'rejectCard' }
-        ))}
+        {...(!swiped &&
+          recentUniversityId === university.id && (
+            recentAction === ACCEPT_UNIVERSITY ?
+              { animationClass: 'approveCard' } :
+              { animationClass: 'rejectCard' }
+          )
+        )}
         distance={distance}
         university={university}
         onTouchStart={this.touchStart}
