@@ -17,7 +17,6 @@ export class DefaultLayout extends React.Component {
     const mainStyle = {
       backgroundColor
     };
-    mainStyle.paddingTop = this.props.muiTheme.appBar.height;
 
     return (
       <div>

@@ -1,10 +1,12 @@
+@import 'styles/variables/colors';
+
 .defaultBackground {
   background-image: url('assets/purple-locked-background.png');
 }
 
 .genericLockedWrapper {
   background-size: cover;
-
+  background-color: $acapulco;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
