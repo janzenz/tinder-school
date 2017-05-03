@@ -6,12 +6,23 @@ class AccordionContainer extends Component {
     children: PropTypes.node.isRequired
   }
 
+  static maxHeight = 80;
+
   constructor() {
     super();
 
     this.state = {
-      expand: false
+      expand: false,
+      showExpand: false
     };
+  }
+
+  componentDidMount() {
+    if (this.container.clientHeight > this.constructor.maxHeight) {
+      this.setState({
+        showExpand: true
+      });
+    }
   }
 
   toggleExpand = () => {
@@ -20,12 +31,16 @@ class AccordionContainer extends Component {
     });
   }
 
+  bindContainer = (container) => this.container = container;
+
   render() {
     const { children } = this.props;
-    const { expand } = this.state;
+    const { expand, showExpand } = this.state;
 
     return (
       <Accordion
+        bindContainer={this.bindContainer}
+        showExpand={showExpand}
         expand={expand}
         children={children}
         toggleExpand={this.toggleExpand}

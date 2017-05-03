@@ -20,6 +20,7 @@ export const colors = {
   albescentWhite: '#FBF7F0',
   white: '#FFFFFF',
   bianca: '#FCF9F2',
+  iron: '#D8D8D8',
 
 // Dak Palete
   thunder: '#3C293B',

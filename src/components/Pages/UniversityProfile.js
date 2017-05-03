@@ -10,7 +10,6 @@ import { Accordion } from 'containers/Utilities';
 import { kFormatter, getPercentageString, getPercentage } from 'modules/helpers';
 import _random from 'lodash/random';
 import _inRange from 'lodash/inRange';
-// Styles specific imports
 import { colors } from 'static/colorsPalette';
 import classes from './UniversityProfile.scss';
 
@@ -19,18 +18,20 @@ import gridClasses from 'styles/common/grid.scss';
 
 const styles = {
   chanceToGet: {
-    height: 14,
+    height: 11,
     width: '90%',
     borderRadius: 5,
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    backgroundColor: colors.iron
   },
   entryRequirements: {
     height: 10,
     width: '90%',
     borderRadius: 0,
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    backgroundColor: colors.iron
   },
   btnContainer: {
     borderRadius: 20,
