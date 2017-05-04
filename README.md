@@ -33,7 +33,7 @@ I started with Routing and created the rudimentary pages and eventually added th
 * I created a provision for the **Entry Requirements** section instead of just manually coding the page wih static HTML. So in case we need to inject that data in it's easy to apply. `src/components/Pages/UniversityProfile.js:48`  
 
 ## Improvements
-* I updated the package of Material UI to `0.17.0` because of some props being missing and not support. Shameless plug, I'm also a contributor of this library.
+* I updated the package of Material UI to `0.17.0` because of some props being missing and no support. Shameless plug, I'm also a contributor of this library.
 * I didn't know I could create a Pie Chart without any help from D3.js or any library. LOL!
 * Lastly, I originally thought of just supporting Swipe for choosing Universities. But I thought it wasn't a good UX since some people might "change" their minds along the way so I added distance checking for the drag. And if it reaches a certain range and the user lets go then the action is committed. Otherwise the University "card" goes back to its original location.
 
