@@ -23,7 +23,7 @@ However, here are some bits on how I worked on this project. Since I'm limited t
 ##### A bit of overview how I engineered this project:
 I started with Routing and created the rudimentary pages and eventually added the data-loading. When I was ready to play with the data I planned out the structure of my **Reducers* as you can see in my comments on `src/store/reducers/index.js`. So basically I started with the most difficult tasks to gain confidence with the work at hand and whenever I get stuck I start refactoring some code and do some easier tasks and get back to where I left off. This approach has proven to be beneficial for me for a long time and I developed this practice through experience.
 
-## Techniques Applied
+## Techniques and Best Pracites Applied
 ##### So here are noteworthy techniques and optimizations I did for this Project:
 * I abused **PropTypes** as much as possible since it really helps a lot. I made sure that I covered all the props for each `components` and `container`. This helps to know bugs early and fail efficiently.  
 * I used **Reselect** to memoize the result when selecting Universities, this proved to be helpful in keeping my code DRY as well.  
