@@ -4,7 +4,7 @@
 ## Project setup
 1. Run `npm install`
 2. Run `npm run start`
-3. Navigate to http://localhost:9000
+3. Navigate to `http://localhost:9000`
 Note you can change the port in `.env` file.
 
 ## DEMO
