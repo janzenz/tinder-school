@@ -42,13 +42,13 @@ So here are noteworthy techniques and optimizations I did for this Project:
 
 ## Moreover
 If I had more time and more freedom on this project, here are the things I could have improved, not in order:
-1. Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.
+1. Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.<br />
 2. Use **Flow** or **TypeScript**. Not necessary but will help in the long run.
-3. Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.
+3. Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.<br />
 4. Use `react-transition-group` for fine-tuning the animation of the elements.
-5. We can also remove `react-tap-event-plugin` since it's not necessary on `react@^0.15.0`.
-6. Build and deploy the project.
-7. Last be definitely not the list. Go over the *TODO* items I commented out for things that I think can be improved on.
+5. We can also remove `react-tap-event-plugin` since it's not necessary on `react@^0.15.0`.<br />
+6. Build and deploy the project.<br />
+7. Last be definitely not the list. Go over the *TODO* items I commented out for things that I think can be improved on.<br />
 
 For questions and clarifications, I would be happy to discuss these in detail.
 Email: janzen.zarzoso@gmail.com
