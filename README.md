@@ -8,7 +8,7 @@
 Note you can change the port in `.env` file.
 
 ## DEMO
-Since I didn't have time to test it on other environments here are some requirements to be able to run this app without hiccups:
+Since I didn't have time to test it on other environments here are some requirements to be able to run this app without hiccups:  
 1. Chrome
 2. Mobile View with **iPhone 6 Plus** dimension
 These are necessary because I added Touch Events for the **Tinder-like** swiping function when choosing Universities.
@@ -21,7 +21,7 @@ However, here are some bits on how I worked on this project. Since I'm limited t
 A bit of overview how I engineered this project; I started with Routing and created the rudimentary pages and eventually added the data-loading. When I was ready to play with the data I planned out the structure of my **Reducers* as you can see in my comments on `src/store/reducers/index.js`. So basically I started with the most difficult tasks to gain confidence with the work at hand and whenever I get stuck I start refactoring some code and do some easier tasks and get back to where I left off. This approach has proven to be beneficial for me for a long time and I developed this practice through experience.
 
 ## Techniques Applied
-So here are noteworthy techniques and optimizations I did for this Project:
+So here are noteworthy techniques and optimizations I did for this Project:  
 1. I abused **PropTypes** as much as possible since it really helps a lot. I made sure that I covered all the props for each `components` and `container`. This helps to know bugs early and fail efficiently.
 2. **Reselect** I used reselect to memoize the result when selecting Universities, this proved to be helpful in keeping my code DRY as well.
 3. I used **Thunks** to retrieve the University data and grouped dispatches in one of the **Thunks** to keep them DRY and proved to be useful when Accepted/Rejecting Universities via Swipe and Button actions. I also kept my **Reducers** as *PURE* as possible. You will know it is so, since the **time-travel-debugging (TTD)** works pretty well.
@@ -42,13 +42,13 @@ So here are noteworthy techniques and optimizations I did for this Project:
 
 ## Moreover
 If I had more time and more freedom on this project, here are the things I could have improved, not in order:
-1. Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.<br />
+1. Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.
 2. Use **Flow** or **TypeScript**. Not necessary but will help in the long run.
-3. Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.<br />
+3. Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.
 4. Use `react-transition-group` for fine-tuning the animation of the elements.
-5. We can also remove `react-tap-event-plugin` since it's not necessary on `react@^0.15.0`.<br />
-6. Build and deploy the project.<br />
-7. Last be definitely not the list. Go over the *TODO* items I commented out for things that I think can be improved on.<br />
+5. We can also remove `react-tap-event-plugin` since it's not necessary on `react@^0.15.0`.
+6. Build and deploy the project.
+7. Last be definitely not the list. Go over the *TODO* items I commented out for things that I think can be improved on.
 
 For questions and clarifications, I would be happy to discuss these in detail.
 Email: janzen.zarzoso@gmail.com
