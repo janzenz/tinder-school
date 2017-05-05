@@ -30,7 +30,8 @@ const styles = {
 
 export default class InnerHeader extends React.Component {
   static propTypes = {
-    titleElement: PropTypes.string
+    titleElement: PropTypes.string,
+    backgroundColor: PropTypes.string
   }
 
   constructor(props, context) {
@@ -38,9 +39,14 @@ export default class InnerHeader extends React.Component {
   }
 
   render() {
+    const { backgroundColor } = this.props;
+
     return (
       <AppBar
-        style={styles.appBar}
+        style={{ 
+          ...styles.appBar,
+          backgroundColor
+        }}
         titleStyle={styles.titleElementStyle}
         title={this.renderAppBarTitle()}
         iconElementLeft={this.renderIconButtonLeft()}

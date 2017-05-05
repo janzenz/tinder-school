@@ -3,6 +3,7 @@ import DefaultLayout from 'containers/DefaultLayout/DefaultLayout';
 import { InnerPage } from 'components/Pages';
 import { InnerHeader } from 'containers/Header';
 import { Choices, Selected } from 'containers/List';
+import { colors } from 'static/colorsPalette';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 
 export class IndexLayout extends React.Component {
@@ -19,7 +20,12 @@ export class IndexLayout extends React.Component {
 
     return (
       <DefaultLayout
-        Header={<InnerHeader titleElement="MY UNIVERSITIES" />}
+        Header={
+          <InnerHeader
+            backgroundColor={colors.acapulco}
+            titleElement="MY UNIVERSITIES"
+          />
+        }
       >
         <InnerPage style={{ paddingTop: muiTheme.appBar.height }}>
           <Choices />
