@@ -1,3 +1,21 @@
+@keyframes attemptMoveRight {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(90px) translateY(-9px) rotate(-2deg) scale(0.9);
+  }
+}
+
+@keyframes attemptMoveLeft {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-90px) translateY(9px) rotate(6deg);
+  }
+}
+
 @keyframes swipeRight {
   0% {
     transform: translateX(90px) translateY(-9px) rotate(-2deg) scale(0.9);

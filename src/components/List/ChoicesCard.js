@@ -4,21 +4,26 @@ import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
 import classes from './ChoicesCard.scss';
 
+const getMoveClass = (distance) => {
+  if (distance !== 0) {
+    return distance > 0 ? (
+      classes.attemptMoveRight
+    ) : (
+      classes.attemptMoveLeft
+    );
+  }
+};
+
 const ChoicesCard = ({ distance, animationClass, university, onTouchMove, onTouchStart, onTouchEnd }) => (
   <div
-    className={`${classes.choicesCardContainer} ${classes[animationClass]}`}
+    className={`
+      ${classes.choicesCardContainer}
+      ${classes[animationClass]}
+      ${getMoveClass(distance)}
+    `}
     onTouchMove={onTouchMove}
     onTouchStart={onTouchStart}
     onTouchEnd={onTouchEnd}
-    {...(distance !== 0 && (distance > 0 ? {
-      style: {
-        transform: `translateX(${distance}px) translateY(-${distance / 10}px) rotate(-2deg) scale(0.9)`
-      }
-    } : {
-      style: {
-        transform: `translateX(${distance}px) translateY(${Math.abs(distance) / 10}px) rotate(${Math.abs(distance) / 15}deg)`
-      }
-    }))}
   >
     <div className={classes.choicesCardHeader}>
       <UniversityHeader />

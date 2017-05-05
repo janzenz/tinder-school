@@ -16,12 +16,22 @@
   position: absolute;
   transition: all .75s;
 
+  &.attemptMoveRight,
+  &.attemptMoveLeft,
   &.swipeRight,
   &.swipeLeft,
   &.approveCard,
   &.rejectCard {
     animation-duration: 1s;
     animation-fill-mode: forwards;
+  }
+
+  &.attemptMoveRight {
+    animation-name: attemptMoveRight;
+  }
+
+  &.attemptMoveLeft {
+    animation-name: attemptMoveLeft;
   }
 
   &.swipeRight {
