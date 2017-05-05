@@ -45,7 +45,8 @@ I started with Routing and created the rudimentary pages and eventually added th
 
 ## Moreover
 ##### If I had more time and more freedom on this project, here are the things I could have improved, not in order:  
-* Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.  
+* Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.
+* Use JavaScript animations. I intentionally used CSS animations because it's easier to mimic (pixel by pixel) the current animation.
 * Use **Flow** or **TypeScript**. Not necessary but will help in the long run.  
 * Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.  
 * Use `react-transition-group` for fine-tuning the animation of the elements.  
