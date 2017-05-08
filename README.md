@@ -30,7 +30,8 @@ I started with Routing and created the rudimentary pages and eventually added th
 * I used **Thunks** to retrieve the University data and grouped dispatches in one of the **Thunks** to keep them DRY and proved to be useful when Accepted/Rejecting Universities via Swipe and Button actions. I also kept my **Reducers** as *PURE* as possible. You will know it is so, since the **time-travel-debugging (TTD)** works pretty well.  
 * I also linked `react-router-redux` in the configuration to also make the routes available for TTD.  
 * I used **Debouncing** and **Throttle** for touch events and **Thunks** to improve performance on the UI and avoid race conditions.  
-* I created a provision for the **Entry Requirements** section instead of just manually coding the page wih static HTML. So in case we need to inject that data in it's easy to apply. `src/components/Pages/UniversityProfile.js:48`  
+* I created a provision for the **Entry Requirements** section instead of just manually coding the page wih static HTML. So in case we need to inject that data in it's easy to apply. `src/components/Pages/UniversityProfile.js:48`
+* I used the convetion of `_` for private methods, for example: `_shouldCommitSwipe` in `src/containers/List/ChoicesCardContainer.js`.
 
 ## Improvements
 * I updated the package of Material UI to `0.17.0` because of some props being missing and no support. Shameless plug, I'm also a contributor of this library.
@@ -46,6 +47,7 @@ I started with Routing and created the rudimentary pages and eventually added th
 ## Moreover
 ##### If I had more time and more freedom on this project, here are the things I could have improved, not in order:  
 * Although its trivial to implement, I could have applied Mouse Drag and Drop events. But since I was using Chrome's mobile mode I was limited to Touch Events, hence I implemented Touch instead of Mouse Events.
+* Add JSDoc for documentation and add more comments.
 * Use JavaScript animations. I intentionally used CSS animations because it's easier quicker to mimic (pixel by pixel) the current animation.
 * Use **Flow** or **TypeScript**. Not necessary but will help in the long run.  
 * Add testing using Enzyme, Chai, and Mocha, especially for the Tinder-style University picking.  
