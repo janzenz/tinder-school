@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Choices } from 'components/List';
 import { chooseUniversity } from 'store/actions/thunks';
-import * as constants from 'config/constants';
-import _debounce from 'lodash/debounce';
 
 class ChoicesContainer extends Component {
   static propTypes = {

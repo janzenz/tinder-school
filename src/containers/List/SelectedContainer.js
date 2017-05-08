@@ -13,10 +13,19 @@ class SelectedContainer extends Component {
     seeAll: PropTypes.bool.isRequired
   }
 
+  /**
+   * Onclick Handler
+   * @param {string|integer} universityId - University ID
+   * @returns {void}
+   */
   onClick = (universityId) => {
     this.props.viewUniversity(universityId);
   }
 
+  /**
+   * Collapse/Expand handler
+   * @returns {void}
+   */
   onToggleView = () => {
     const { seeAll, toggleSeeAll } = this.props;
     toggleSeeAll(!seeAll);

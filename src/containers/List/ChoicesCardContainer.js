@@ -29,6 +29,12 @@ class ChoicesCardContainer extends Component {
     };
   }
 
+  /**
+    * Throttles TouchMove function
+    * @param {function} - Function to be triggered.
+    * @param {integer} - Time to wait before the function is triggered again.
+    * @returns {void}
+    */
   _throttledMove = _throttle((e) => {
     const touch = e.changedTouches[0];
     const distance = touch.pageX - this.startX;
@@ -43,7 +49,7 @@ class ChoicesCardContainer extends Component {
   /**
    * This decides if the swipe distance is enough to promote swipe.
    * @param {integer} distance - The distance between the start and end of the swipe.
-   * @return {boolean} True if the swipe is far enough.
+   * @returns {boolean} True if the swipe is far enough.
    */
   _shouldCommitSwipe = (distance) => {
     if (distance > this.threshold || distance < -this.threshold) {
@@ -53,6 +59,11 @@ class ChoicesCardContainer extends Component {
     return false;
   }
 
+  /**
+   * TouchStart event handler
+   * @param {Event} e - Synthetic Event
+   * @returns {void}
+   */
   touchStart = (e) => {
     this.touchEnded = false;
     const touch = e.changedTouches[0];
@@ -60,11 +71,20 @@ class ChoicesCardContainer extends Component {
     this.startY = touch.pageY;
   }
 
+  /**
+   * TouchStart event handler
+   * @param {Event} e - Synthetic Event
+   * @returns {void}
+   */
   touchMove = (e) => {
     e.persist();
     this._throttledMove(e);
   }
 
+  /**
+   * TouchEnd event handler
+   * @returns {void}
+   */
   touchEnd = () => {
     const { distance } = this.state;
     const { chooseUniversity } = this.props;
