@@ -40,14 +40,16 @@ class ChoicesCardContainer extends Component {
     }
   }, 100)
 
+  /**
+   * This decides if the swipe distance is enough to promote swipe.
+   * @param {integer} distance - The distance between the start and end of the swipe.
+   * @return {boolean} True if the swipe is far enough.
+   */
   _shouldCommitSwipe = (distance) => {
     if (distance > this.threshold || distance < -this.threshold) {
       return true;
     }
 
-    this.setState({
-      distance: 0
-    });
     return false;
   }
 
@@ -83,6 +85,10 @@ class ChoicesCardContainer extends Component {
           }, constants.CARD_COMPLETION_TIME);
         });
       }
+    } else {
+      this.setState({
+        distance: 0
+      });
     }
   }
 

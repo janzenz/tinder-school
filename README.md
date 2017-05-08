@@ -25,7 +25,7 @@ I started with Routing and created the rudimentary pages and eventually added th
 
 ## Techniques and Best Pracites Applied
 ##### So here are noteworthy techniques and optimizations I did for this Project:
-* I abused **PropTypes** as much as possible since it really helps a lot. I made sure that I covered all the props for each `components` and `container`. This helps to know bugs early and fail efficiently.  
+* I abused **PropTypes** as much as possible since it really helps a lot. I made sure that I covered all the props for each `components` and `container`. This helps to know bugs early and fail efficiently and for self-documentation.
 * I used **Reselect** to memoize the result when selecting Universities, this proved to be helpful in keeping my code DRY as well.  
 * I used **Thunks** to retrieve the University data and grouped dispatches in one of the **Thunks** to keep them DRY and proved to be useful when Accepted/Rejecting Universities via Swipe and Button actions. I also kept my **Reducers** as *PURE* as possible. You will know it is so, since the **time-travel-debugging (TTD)** works pretty well.  
 * I also linked `react-router-redux` in the configuration to also make the routes available for TTD.  
