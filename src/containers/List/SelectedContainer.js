@@ -16,7 +16,7 @@ class SelectedContainer extends Component {
   /**
    * Onclick Handler
    * @param {string|integer} universityId - University ID
-   * @returns {void}
+   * @return {void}
    */
   onClick = (universityId) => {
     this.props.viewUniversity(universityId);
@@ -24,7 +24,7 @@ class SelectedContainer extends Component {
 
   /**
    * Collapse/Expand handler
-   * @returns {void}
+   * @return {void}
    */
   onToggleView = () => {
     const { seeAll, toggleSeeAll } = this.props;

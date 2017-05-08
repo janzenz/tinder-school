@@ -4,6 +4,11 @@ import _capitalize from 'lodash/capitalize';
 import { UniversityHeader } from 'components/Header';
 import classes from './ChoicesCard.scss';
 
+/**
+ * This calculates whether to use a right attempt swipe animation or otherwise.
+ * @param {integer} distance - The distance between the start of the swipe and end.
+ * @return {string} - Returned the class for the swipe.
+ */
 const getMoveClass = (distance) => {
   if (distance !== 0) {
     return distance > 0 ? (

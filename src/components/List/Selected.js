@@ -11,8 +11,9 @@ const styles = {
   infoButton: {
     position: 'absolute'
   }
-}
-// TODO: Add functionality for the Icon.
+};
+
+// TODO: Add functionality for the Information Icon.
 const Selected = ({ selected, total, seeAll, onClick, onToggleView }) => (
   <div className={classes.selectedContainer}>
     <div className={classes.selectedHeader}>

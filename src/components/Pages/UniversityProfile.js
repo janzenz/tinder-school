@@ -49,6 +49,9 @@ const styles = {
   }
 };
 
+/**
+ * Class representing the Entry Requirements section in the University Profile.
+ */
 class Requirements {
   constructor(rate, act, gpa) {
     this.rate = rate || _random(100);
