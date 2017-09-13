@@ -24,7 +24,7 @@ const config = {
   // ----------------------------------
   // Server Configuration
   // ----------------------------------
-  server_host : 'localhost', // use string 'localhost' to prevent exposure on local network
+  server_host : process.env.HOST || 'localhost', // use string 'localhost' to prevent exposure on local network
   server_protocol : 'http',
   server_port : process.env.PORT || 80,
 
